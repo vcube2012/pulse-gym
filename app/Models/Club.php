@@ -47,6 +47,8 @@ use Spatie\Sluggable\SlugOptions;
  * @property-read int|null $services_count
  * @method static \Illuminate\Database\Eloquent\Builder|Club whereImage($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Club whereSlug($value)
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\PriceCategory[] $price
+ * @property-read int|null $price_count
  */
 class Club extends Model implements HasMedia
 {

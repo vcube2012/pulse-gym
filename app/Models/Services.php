@@ -23,6 +23,7 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Services whereUpdatedAt($value)
  * @mixin \Eloquent
  * @property-read int|null $clubs_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Club[] $clubs
  */
 class Services extends Model
 {

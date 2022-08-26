@@ -23,6 +23,12 @@ return new class extends Migration
             $table->text('social')->nullable();
             $table->timestamps();
         });
+
+        Schema::create('club_coach', function (Blueprint $table) {
+            $table->foreignIdFor(\App\Models\Coach::class)->constrained()->cascadeOnDelete();
+            $table->foreignIdFor(\App\Models\Club::class)->constrained()->cascadeOnDelete();
+        });
+
     }
 
     /**

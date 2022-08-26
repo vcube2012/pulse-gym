@@ -11,6 +11,12 @@ use Whitecube\NovaFlexibleContent\Flexible;
 
 class CoachResource extends Resource
 {
+
+    public static function label()
+    {
+        return 'Тренеры';
+    }
+
     public static $model = Coach::class;
 
     public static $title = 'title';

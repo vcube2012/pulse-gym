@@ -9,7 +9,6 @@ use Illuminate\Database\Eloquent\Model;
  * App\Models\Services
  *
  * @property int $id
- * @property int $club_id
  * @property string $name
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
@@ -23,8 +22,15 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Services whereName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Services whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property-read int|null $clubs_count
  */
 class Services extends Model
 {
     use HasFactory;
+    protected $fillable = ['name'];
+
+    public function clubs(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    {
+        return $this->belongsToMany(Club::class);
+    }
 }

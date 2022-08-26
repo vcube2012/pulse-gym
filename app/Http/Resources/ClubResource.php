@@ -25,6 +25,8 @@ class ClubResource extends JsonResource
             'lng' => $this->lng,
             'phone' => $this->getPhone(),
             'media' => $this->getMedia('main')->all(),
+            'services' => ServicesResource::collection($this->whenLoaded('services')),
+            'price' => PriceCategoryResource::collection($this->whenLoaded('price')),
         ];
     }
 }

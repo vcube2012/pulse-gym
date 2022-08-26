@@ -37,6 +37,16 @@ use Spatie\Sluggable\SlugOptions;
  * @method static \Illuminate\Database\Eloquent\Builder|Club wherePhone($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Club whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property string $slug
+ * @property string $image
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Feedback[] $feedback
+ * @property-read int|null $feedback_count
+ * @property-read \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection|Media[] $media
+ * @property-read int|null $media_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Services[] $services
+ * @property-read int|null $services_count
+ * @method static \Illuminate\Database\Eloquent\Builder|Club whereImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Club whereSlug($value)
  */
 class Club extends Model implements HasMedia
 {
@@ -49,6 +59,20 @@ class Club extends Model implements HasMedia
     public function feedback(){
         return $this->hasMany(Feedback::class);
     }
+
+
+    public function services(){
+        return $this->belongsToMany(Services::class);
+    }
+
+
+
+    public function price(){
+        return $this->belongsToMany(PriceCategory::class);
+    }
+
+
+
 
     public function registerMediaConversions(Media $media = null): void
     {

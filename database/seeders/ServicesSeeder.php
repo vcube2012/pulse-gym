@@ -2,21 +2,27 @@
 
 namespace Database\Seeders;
 
+use App\Models\Club;
 use App\Models\Services;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class ServicesSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
     public function run()
     {
-        Services::factory(10)->create()->each(function (){
-
-        });
+        $data =[
+            'Тренажерный зал' ,
+            'Фитнес-микс',
+            'Йога',
+            'Фитнес',
+            'Джиу-Джитсу',
+            'Танцевальная аэробика',
+            'Пилатес',
+            'Грепплинг',
+        ];
+        foreach ($data as $item) {
+            $d = Services::create(['name'=> $item]);
+            $d->clubs()->sync(Club::all()->value('id'));
+        }
     }
 }

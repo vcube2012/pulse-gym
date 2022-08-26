@@ -2,21 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreClubRequest;
-use App\Http\Requests\UpdateClubRequest;
-use App\Http\Resources\ClubResource;
-use App\Models\Club;
+use App\Http\Requests\StorePriceCategoryRequest;
+use App\Http\Requests\UpdatePriceCategoryRequest;
+use App\Models\PriceCategory;
 
-class ClubController extends Controller
+class PriceCategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
+     * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        return ClubResource::collection(Club::with(['services'])->paginate());
+        //
     }
 
     /**
@@ -32,10 +31,10 @@ class ClubController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreClubRequest  $request
+     * @param  \App\Http\Requests\StorePriceCategoryRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreClubRequest $request)
+    public function store(StorePriceCategoryRequest $request)
     {
         //
     }
@@ -43,21 +42,21 @@ class ClubController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Club  $club
+     * @param  \App\Models\PriceCategory  $priceCategory
      * @return \Illuminate\Http\Response
      */
-    public function show(Club $club)
+    public function show(PriceCategory $priceCategory)
     {
-        return new ClubResource($club->load(['price']));
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Club  $club
+     * @param  \App\Models\PriceCategory  $priceCategory
      * @return \Illuminate\Http\Response
      */
-    public function edit(Club $club)
+    public function edit(PriceCategory $priceCategory)
     {
         //
     }
@@ -65,11 +64,11 @@ class ClubController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateClubRequest  $request
-     * @param  \App\Models\Club  $club
+     * @param  \App\Http\Requests\UpdatePriceCategoryRequest  $request
+     * @param  \App\Models\PriceCategory  $priceCategory
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateClubRequest $request, Club $club)
+    public function update(UpdatePriceCategoryRequest $request, PriceCategory $priceCategory)
     {
         //
     }
@@ -77,10 +76,10 @@ class ClubController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Club  $club
+     * @param  \App\Models\PriceCategory  $priceCategory
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Club $club)
+    public function destroy(PriceCategory $priceCategory)
     {
         //
     }

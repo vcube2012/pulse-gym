@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Club;
+use App\Models\Services;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Testing\Fluent\Concerns\Has;
@@ -27,7 +28,9 @@ class DatabaseSeeder extends Seeder
             ClubSeeder::class,
             TagSeeder::class,
             BlogSeeder::class,
-            FeedbackSeeder::class
+            FeedbackSeeder::class,
+            ServicesSeeder::class,
+            PriceCategorySeeder::class,
         ]);
     }
 }

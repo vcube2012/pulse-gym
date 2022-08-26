@@ -13,10 +13,10 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::get('/tags' , [\App\Http\Controllers\TagController::class , 'index'])->middleware('cache');
-Route::get('blogs' , [\App\Http\Controllers\BlogController::class , 'index'])->middleware('cache');
-Route::get('blogs/{blog:slug}' , [\App\Http\Controllers\BlogController::class , 'show'])->middleware('cache');
-Route::get('feedback' , [\App\Http\Controllers\FeedbackController::class , 'index'])->middleware('cache');
+Route::get('/tags' , [\App\Http\Controllers\TagController::class , 'index']);
+Route::get('blogs' , [\App\Http\Controllers\BlogController::class , 'index']);
+Route::get('blogs/{blog:slug}' , [\App\Http\Controllers\BlogController::class , 'show']);
+Route::get('feedback' , [\App\Http\Controllers\FeedbackController::class , 'index']);
 Route::post('feedback' , [\App\Http\Controllers\FeedbackController::class , 'store']);
 Route::get('clubs' , [\App\Http\Controllers\ClubController::class , 'index']);
 Route::get('clubs/{club:slug}' , [\App\Http\Controllers\ClubController::class , 'show']);

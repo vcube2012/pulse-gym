@@ -5,6 +5,7 @@ namespace App\Nova;
 use App\Models\Coach;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
 use Whitecube\NovaFlexibleContent\Flexible;
 
@@ -44,7 +45,13 @@ class CoachResource extends Resource
                 ->rules('nullable'),
 
             Flexible::make('social')->addLayout('Номер телефона', 'social', [
-                Text::make('icon'),
+                Select::make('icon')->options(function (){
+                    return [
+                        'instagram' => 'instagram',
+                        'facebook' => 'facebook',
+                        'vk' => 'vk',
+                    ];
+                }),
                 Text::make('url'),
             ]),
         ];

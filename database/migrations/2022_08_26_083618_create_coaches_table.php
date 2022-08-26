@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('coaches', function (Blueprint $table) {
-            $table->uuid('id');
+            $table->id('id');
             $table->string('name')->index();
             $table->string('title')->nullable();
             $table->string('image');
@@ -39,5 +39,6 @@ return new class extends Migration
     public function down()
     {
         Schema::dropIfExists('coaches');
+        Schema::dropIfExists('club_coach');
     }
 };

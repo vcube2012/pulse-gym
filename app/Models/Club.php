@@ -52,28 +52,36 @@ use Spatie\Sluggable\SlugOptions;
  */
 class Club extends Model implements HasMedia
 {
-    use InteractsWithMedia ,HasSlug;
+    use InteractsWithMedia, HasSlug;
 
     use HasFactory;
+
     protected $casts = [
         'phone' => 'json',
     ];
-    public function feedback(){
+
+    public function feedback()
+    {
         return $this->hasMany(Feedback::class);
     }
 
 
-    public function services(){
+    public function services()
+    {
         return $this->belongsToMany(Services::class);
     }
 
 
-
-    public function price(){
-        return $this->belongsToMany(PriceCategory::class);
+    public function coach()
+    {
+        return $this->belongsToMany(Coach::class);
     }
 
 
+    public function price()
+    {
+        return $this->belongsToMany(PriceCategory::class);
+    }
 
 
     public function registerMediaConversions(Media $media = null): void
@@ -90,7 +98,7 @@ class Club extends Model implements HasMedia
         $this->addMediaCollection('my_multi_collection');
     }
 
-    public function getSlugOptions() : SlugOptions
+    public function getSlugOptions(): SlugOptions
     {
         return SlugOptions::create()
             ->generateSlugsFrom('name')
@@ -100,8 +108,8 @@ class Club extends Model implements HasMedia
     public function getPhone()
     {
         try {
-            return Arr::pluck($this->phone , 'attributes.phone');
-        }catch (\Throwable $exception){
+            return Arr::pluck($this->phone, 'attributes.phone');
+        } catch (\Throwable $exception) {
             return [];
         }
     }

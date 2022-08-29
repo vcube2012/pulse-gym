@@ -27,6 +27,7 @@ class ClubResource extends JsonResource
             'media' => $this->getMedia('main')->all(),
             'services' => ServicesResource::collection($this->whenLoaded('services')),
             'price' => PriceCategoryResource::collection($this->whenLoaded('price')),
+            'coaches' => CoachResource::collection($this->whenLoaded('coach')),
         ];
     }
 }

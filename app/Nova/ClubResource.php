@@ -3,15 +3,12 @@
 namespace App\Nova;
 
 use App\Models\Club;
-use App\Models\PriceCategory;
 use Ebess\AdvancedNovaMediaLibrary\Fields\Images;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsToMany;
-use Laravel\Nova\Fields\Code;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
-use Ebess\AdvancedNovaMediaLibrary\Fields\Media;
 use NovaAttachMany\AttachMany;
 use Whitecube\NovaFlexibleContent\Flexible;
 
@@ -51,8 +48,13 @@ class ClubResource extends Resource
                 Text::make('phone'),
             ]),
             HasMany::make('feedback' , 'feedback' , FeedbackResource::class),
+
             AttachMany::make('price_category', 'price' , PriceCategoryResource::class),
             BelongsToMany::make('price_category', 'price' , PriceCategoryResource::class),
+
+            AttachMany::make('coach', 'coach' , CoachResource::class),
+            BelongsToMany::make('coach', 'coach' , CoachResource::class),
+
             Images::make('Main image', 'main')
         ];
     }

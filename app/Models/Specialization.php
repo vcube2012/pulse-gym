@@ -17,4 +17,9 @@ use Illuminate\Database\Eloquent\Model;
 class Specialization extends Model
 {
     use HasFactory;
+
+    public function coach(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    {
+        return $this->belongsToMany(Coach::class);
+    }
 }

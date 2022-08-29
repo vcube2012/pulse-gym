@@ -5,8 +5,8 @@ namespace App\Http\Resources;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-/** @mixin \App\Models\Blog */
-class BlogResource extends JsonResource
+/** @mixin \App\Models\Coach */
+class CoachResource extends JsonResource
 {
     /**
      * @param Request $request
@@ -16,12 +16,12 @@ class BlogResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'slug' => $this->slug,
+            'name' => $this->name,
             'title' => $this->title,
             'image' => $this->image,
             'description' => $this->description,
-            'tags' => TagResource::collection($this->whenLoaded('tags')),
-            'date' => $this->created_at
+            'phone' => $this->phone,
+            'social' => $this->getSocial(),
         ];
     }
 }

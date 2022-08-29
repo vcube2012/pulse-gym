@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Arr;
 
 /**
  * App\Models\Coach
@@ -35,4 +36,27 @@ use Illuminate\Database\Eloquent\Model;
 class Coach extends Model
 {
     use HasFactory;
+
+    protected $casts = [
+        'social' => 'json'
+    ];
+
+    public function specialization(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    {
+        return $this->belongsToMany(Specialization::class);
+    }
+
+    public function coach(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    {
+        return $this->belongsToMany(Club::class);
+    }
+
+    public function getSocial()
+    {
+        try {
+            return Arr::pluck($this->social, 'attributes');
+        } catch (\Throwable $exception) {
+            return [];
+        }
+    }
 }

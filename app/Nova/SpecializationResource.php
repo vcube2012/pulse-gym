@@ -5,6 +5,7 @@ namespace App\Nova;
 use App\Models\Specialization;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Text;
 
 class SpecializationResource extends Resource
 {
@@ -15,7 +16,7 @@ class SpecializationResource extends Resource
 
     public static $model = Specialization::class;
 
-    public static $title = 'id';
+    public static $title = 'name';
 
     public static $search = [
         ''
@@ -25,6 +26,7 @@ class SpecializationResource extends Resource
     {
         return [
             ID::make()->sortable(),
+            Text::make('name')
         ];
     }
 

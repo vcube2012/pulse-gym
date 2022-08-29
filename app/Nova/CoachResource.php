@@ -3,10 +3,13 @@
 namespace App\Nova;
 
 use App\Models\Coach;
+use App\Models\Specialization;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
+use NovaAttachMany\AttachMany;
 use Whitecube\NovaFlexibleContent\Flexible;
 
 class CoachResource extends Resource
@@ -60,6 +63,8 @@ class CoachResource extends Resource
                 }),
                 Text::make('url'),
             ]),
+            AttachMany::make('specialization', 'specialization' , SpecializationResource::class),
+            BelongsToMany::make('specialization', 'specialization' , SpecializationResource::class),
         ];
     }
 

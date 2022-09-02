@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Club;
-use App\Models\Services;
+use App\Models\Service;
 use Illuminate\Database\Seeder;
 
 class ServicesSeeder extends Seeder
@@ -21,7 +21,7 @@ class ServicesSeeder extends Seeder
             'Грепплинг',
         ];
         foreach ($data as $item) {
-            $d = Services::create(['name'=> $item]);
+            $d = Service::create(['name'=> $item]);
             $d->clubs()->sync(Club::all()->value('id'));
         }
     }

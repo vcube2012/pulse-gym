@@ -5,8 +5,8 @@ namespace App\Http\Resources;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-/** @mixin \App\Models\Services */
-class ServicesResource extends JsonResource
+/** @mixin \App\Models\Schedule */
+class ScheduleResource extends JsonResource
 {
     /**
      * @param Request $request
@@ -15,8 +15,8 @@ class ServicesResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'name' => $this->name,
-            'schedule'=> $this->schedule
+            'from' => $this->from,
+            'day' => $this->day
         ];
     }
 }

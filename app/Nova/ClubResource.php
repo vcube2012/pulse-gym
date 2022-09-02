@@ -55,7 +55,7 @@ class ClubResource extends Resource
             AttachMany::make('coach', 'coach' , CoachResource::class),
             BelongsToMany::make('coach', 'coach' , CoachResource::class),
 
-            Images::make('Main image', 'main')
+            Images::make('Main image', 'main')->conversionOnIndexView('thumb')
         ];
     }
 

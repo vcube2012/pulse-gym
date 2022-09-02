@@ -40,15 +40,10 @@ class ClubController extends Controller
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Club  $club
-     * @return \Illuminate\Http\Response
-     */
+
     public function show(Club $club)
     {
-        return new ClubResource($club->load(['price' , 'coach']));
+        return new ClubResource($club->load(['price' , 'coach' , 'services']));
     }
 
     /**

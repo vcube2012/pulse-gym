@@ -25,7 +25,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property-read int|null $clubs_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Club[] $clubs
  */
-class Services extends Model
+class Service extends Model
 {
     use HasFactory;
     protected $fillable = ['name'];
@@ -33,5 +33,9 @@ class Services extends Model
     public function clubs(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
     {
         return $this->belongsToMany(Club::class);
+    }
+    public function schedule()
+    {
+        return $this->hasManyThrough(ScheduleService::class ,Schedule::class);
     }
 }

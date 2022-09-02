@@ -13,15 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('services', function (Blueprint $table) {
+        Schema::create('schedules', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->index();
+            $table->foreignIdFor(\App\Models\Club::class)->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
-        Schema::create('club_service', function (Blueprint $table) {
-            $table->foreignIdFor(\App\Models\Club::class)->constrained()->cascadeOnDelete();
-            $table->foreignIdFor(\App\Models\Service::class)->constrained()->cascadeOnDelete();
-        });
+
     }
 
     /**
@@ -31,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('services');
+        Schema::dropIfExists('schedules');
     }
 };

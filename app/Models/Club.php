@@ -68,7 +68,13 @@ class Club extends Model implements HasMedia
 
     public function services()
     {
-        return $this->belongsToMany(Services::class);
+        return $this->belongsToMany(Service::class);
+    }
+
+
+    public function schedule()
+    {
+        return $this->hasManyThrough(ScheduleService::class ,Schedule::class);
     }
 
 

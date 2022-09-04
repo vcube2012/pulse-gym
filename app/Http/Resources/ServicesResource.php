@@ -16,7 +16,6 @@ class ServicesResource extends JsonResource
     {
         return [
             'name' => $this->name,
-            'schedule'=> $this->schedule
         ];
     }
 }

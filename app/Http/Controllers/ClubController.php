@@ -43,7 +43,7 @@ class ClubController extends Controller
 
     public function show(Club $club)
     {
-        return new ClubResource($club->load(['price' , 'coach' , 'services']));
+        return new ClubResource($club->load(['price' , 'coaches' , 'services']));
     }
 
     /**

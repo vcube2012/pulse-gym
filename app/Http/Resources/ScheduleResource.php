@@ -17,6 +17,7 @@ class ScheduleResource extends JsonResource
         return [
             'from' => $this->from,
             'day' => $this->day,
+            'recruiting' => $this->recruiting,
         ];
     }
 }

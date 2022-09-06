@@ -30,6 +30,7 @@ class ClubResource extends Resource
             Text::make('Name')
                 ->sortable()
                 ->rules('required'),
+            Text::make('slug'),
 
             Text::make('Address')
                 ->sortable()
@@ -52,13 +53,13 @@ class ClubResource extends Resource
             AttachMany::make('price_category', 'price' , PriceCategoryResource::class),
             BelongsToMany::make('price_category', 'price' , PriceCategoryResource::class),
 
-            AttachMany::make('coach', 'coach' , CoachResource::class),
-            BelongsToMany::make('coach', 'coach' , CoachResource::class),
+            AttachMany::make('coaches', 'coaches' , CoachResource::class),
+            BelongsToMany::make('coaches', 'coaches' , CoachResource::class),
 
-            AttachMany::make('schedule', 'schedule' , ScheduleResource::class),
-            BelongsToMany::make('schedule', 'schedule' , ScheduleResource::class),
+//            AttachMany::make('schedule', 'schedule' , ScheduleResource::class),
+//            BelongsToMany::make('schedule', 'schedule' , ScheduleResource::class),
 
-            Images::make('Main image', 'main')->conversionOnIndexView('thumb')
+            Images::make('Main image', 'my_multi_collection')->conversionOnIndexView('thumb')
         ];
     }
 

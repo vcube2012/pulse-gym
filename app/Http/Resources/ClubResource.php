@@ -24,7 +24,7 @@ class ClubResource extends JsonResource
             'lat' => $this->lat,
             'lng' => $this->lng,
             'phone' => $this->getPhone(),
-            'media' => $this->getMedia('main')->all(),
+            'media' => $this->getMedia('my_multi_collection')->all(),
             'schedule' => ScheduleResource::collection($this?->schedule)->collection->groupBy(['service.name', function ($item) {
                 return $item['day'];
             }]),

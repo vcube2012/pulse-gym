@@ -20,3 +20,4 @@ Route::get('feedback' , [\App\Http\Controllers\FeedbackController::class , 'inde
 Route::post('feedback' , [\App\Http\Controllers\FeedbackController::class , 'store']);
 Route::get('clubs' , [\App\Http\Controllers\ClubController::class , 'index']);
 Route::get('clubs/{club:slug}' , [\App\Http\Controllers\ClubController::class , 'show']);
+Route::get('clubs/{club:slug}/coach/{coach:slug}' , [\App\Http\Controllers\CoachController::class , 'show']);

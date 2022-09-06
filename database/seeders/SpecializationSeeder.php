@@ -32,7 +32,7 @@ class SpecializationSeeder extends Seeder
         }
 
         foreach (Coach::all() as $item) {
-            $item->specialization()->sync($item);
+            $item->specialization()->sync(Specialization::get()->value('id'));
         }
 
     }

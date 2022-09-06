@@ -2,21 +2,23 @@
 
 namespace Database\Factories;
 
+use App\Models\Coach;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Carbon;
 
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Coach>
- */
 class CoachFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
-    public function definition()
+    protected $model = Coach::class;
+
+    public function definition(): array
     {
         return [
+            'name' => $this->faker->name(),
+            'title' => $this->faker->word(),
+            'image' => $this->faker->imageUrl,
+            'description' => $this->faker->text(),
+//            'phone' => $this->faker->phoneNumber(),
+//            'social' => $this->faker->word(),
         ];
     }
 }

@@ -31,6 +31,8 @@ class DatabaseSeeder extends Seeder
             FeedbackSeeder::class,
             ServicesSeeder::class,
             PriceCategorySeeder::class,
+            CoachSeeder::class,
+            SpecializationSeeder::class
         ]);
     }
 }

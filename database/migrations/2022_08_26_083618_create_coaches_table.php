@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('coaches', function (Blueprint $table) {
             $table->id('id');
             $table->string('name')->index();
+            $table->string('slug')->nullable()->index();
             $table->string('title')->nullable();
             $table->string('image');
             $table->text('description');

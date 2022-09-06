@@ -5,6 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
+use Spatie\Sluggable\HasSlug;
+use Spatie\Sluggable\SlugOptions;
 
 /**
  * App\Models\Coach
@@ -35,12 +37,17 @@ use Illuminate\Support\Arr;
  */
 class Coach extends Model
 {
-    use HasFactory;
+    use HasFactory ,HasSlug;
 
     protected $casts = [
         'social' => 'json'
     ];
-
+    public function getSlugOptions(): SlugOptions
+    {
+        return SlugOptions::create()
+            ->generateSlugsFrom('name')
+            ->saveSlugsTo('slug');
+    }
     public function specialization(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
     {
         return $this->belongsToMany(Specialization::class);

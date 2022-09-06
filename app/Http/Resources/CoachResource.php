@@ -17,11 +17,13 @@ class CoachResource extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
+            'slug' => $this->slug,
             'title' => $this->title,
             'image' => $this->image,
             'description' => $this->description,
             'phone' => $this->phone,
-            'social' => $this->getSocial(),
+            'social' => $this->social,
+            'specialization' => SpecializationResource::collection($this->whenLoaded('specialization')),
         ];
     }
 }

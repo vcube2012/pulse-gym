@@ -18,7 +18,6 @@
         "outl1ne/nova-sortable": "^3.2",
         "spatie/laravel-sluggable": "^3.4",
         "spiral/roadrunner": "^2.8.2",
-        "stepanenko3/nova-settings": "^1.0",
         "whitecube/nova-flexible-content": "^1.0"
     },
     "require-dev": {

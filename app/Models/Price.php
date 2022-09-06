@@ -33,4 +33,12 @@ use Illuminate\Database\Eloquent\Model;
 class Price extends Model
 {
     use HasFactory;
+
+    public function getPriceValueAttribute()
+    {
+        if($this->month){
+            return $this->price.' за абонемент в месяц';
+        }
+        return $this->price;
+    }
 }

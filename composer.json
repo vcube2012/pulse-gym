@@ -16,7 +16,6 @@
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
         "outl1ne/nova-sortable": "^3.2",
-        "spatie/laravel-activitylog": "^4.5",
         "spatie/laravel-sluggable": "^3.4",
         "spiral/roadrunner": "^2.8.2",
         "stepanenko3/nova-settings": "^1.0",

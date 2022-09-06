@@ -94,8 +94,8 @@ class Club extends Model implements HasMedia
     public function registerMediaConversions(Media $media = null): void
     {
         $this->addMediaConversion('thumb')
-            ->width(130)
-            ->height(130);
+            ->width(348)
+            ->height(200);
     }
 
 

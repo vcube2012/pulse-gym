@@ -59,7 +59,10 @@ class ClubResource extends Resource
 //            AttachMany::make('schedule', 'schedule' , ScheduleResource::class),
 //            BelongsToMany::make('schedule', 'schedule' , ScheduleResource::class),
 
-            Images::make('Main image', 'my_multi_collection')->conversionOnIndexView('thumb')
+            Images::make('Main image', 'my_multi_collection')
+                ->conversionOnDetailView('thumb')
+                ->conversionOnIndexView('thumb')
+                 ->conversionOnForm('thumb')
         ];
     }
 

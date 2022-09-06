@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Collection;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
@@ -103,6 +104,8 @@ class Club extends Model implements HasMedia
         $this->addMediaCollection('main')->singleFile();
         $this->addMediaCollection('my_multi_collection');
     }
+
+
 
     public function getSlugOptions(): SlugOptions
     {

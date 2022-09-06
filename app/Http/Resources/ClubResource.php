@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use Ebess\AdvancedNovaMediaLibrary\Http\Resources\MediaResource;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -24,7 +25,7 @@ class ClubResource extends JsonResource
             'lat' => $this->lat,
             'lng' => $this->lng,
             'phone' => $this->getPhone(),
-            'media' => $this->getMedia('my_multi_collection')->all(),
+            'media' => MediaResource::collection($this->loadMedia('my_multi_collection')),
             'schedule' => ScheduleResource::collection($this?->schedule)->collection->groupBy(['service.name', function ($item) {
                 return $item['day'];
             }]),

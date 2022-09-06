@@ -14,8 +14,6 @@ class Media extends JsonResource
      */
     public function toArray($request)
     {
-        return [
-            ...$request->toArray()
-        ];
+        return array_merge($this->resource->toArray() , ['preview_url' => $this->resource->getUrl('thumb')]);
     }
 }

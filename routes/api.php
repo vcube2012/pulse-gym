@@ -21,3 +21,4 @@ Route::post('feedback' , [\App\Http\Controllers\FeedbackController::class , 'sto
 Route::get('clubs' , [\App\Http\Controllers\ClubController::class , 'index']);
 Route::get('clubs/{club:slug}' , [\App\Http\Controllers\ClubController::class , 'show']);
 Route::get('clubs/{club:slug}/coach/{coach:slug}' , [\App\Http\Controllers\CoachController::class , 'show']);
+Route::get('page/{page:slug}' , [\App\Http\Controllers\PageController::class , 'show']);

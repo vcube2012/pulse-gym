@@ -37,17 +37,24 @@ use Spatie\Sluggable\SlugOptions;
  */
 class Coach extends Model
 {
-    use HasFactory ,HasSlug;
+    use HasFactory, HasSlug;
 
     protected $casts = [
         'social' => 'json'
     ];
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
     public function getSlugOptions(): SlugOptions
     {
         return SlugOptions::create()
             ->generateSlugsFrom('name')
             ->saveSlugsTo('slug');
     }
+
     public function specialization(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
     {
         return $this->belongsToMany(Specialization::class);

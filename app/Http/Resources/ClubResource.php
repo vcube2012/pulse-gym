@@ -30,7 +30,7 @@ class ClubResource extends JsonResource
             }]),
             'services' => ServicesResource::collection($this->whenLoaded('services')),
             'price' => PriceCategoryResource::collection($this->whenLoaded('price')),
-            'coaches' => CoachResource::collection($this->whenLoaded('coach')),
+            'coaches' => CoachResource::collection($this->whenLoaded('coaches')),
 
         ];
     }

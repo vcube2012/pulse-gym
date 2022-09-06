@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreCoachRequest;
 use App\Http\Requests\UpdateCoachRequest;
 use App\Http\Resources\CoachResource;
+use App\Models\Club;
 use App\Models\Coach;
 
 class CoachController extends Controller
@@ -41,8 +42,9 @@ class CoachController extends Controller
     }
 
 
-    public function show(Coach $coach)
+    public function show(Club $club , Coach $coach)
     {
+
         return (new CoachResource($coach))->load('specialization');
     }
 

@@ -78,7 +78,7 @@ class Club extends Model implements HasMedia
     }
 
 
-    public function coach()
+    public function coaches()
     {
         return $this->belongsToMany(Coach::class);
     }

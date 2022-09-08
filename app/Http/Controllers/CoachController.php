@@ -45,7 +45,7 @@ class CoachController extends Controller
     public function show(Club $club , Coach $coach)
     {
 
-        return (new CoachResource($coach))->load('specialization');
+        return (new CoachResource($coach->load('specialization')));
     }
 
     /**

@@ -22,7 +22,7 @@ class CoachResource extends JsonResource
             'image' => $this->image,
             'description' => $this->description,
             'phone' => $this->phone,
-            'social' => $this->social,
+            'social' => $this->getSocial(),
             'specialization' => SpecializationResource::collection($this->whenLoaded('specialization')),
         ];
     }

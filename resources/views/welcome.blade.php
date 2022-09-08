@@ -22,8 +22,8 @@
     <link rel="manifest" href="/favicon/manifest.json">
     <meta name="theme-color" content="#ffffff">
     <title>Pulse Gym</title>
-    <script defer="defer" src="/static/js/main.js"></script>
-    <link href="/static/css/main.css" rel="stylesheet">
+    <script defer="defer" src="/static/js/main.js?v={{ time() }}"></script>
+    <link href="/static/css/main.css?v={{ time() }}" rel="stylesheet">
 </head>
 <body>
 <noscript>You need to enable JavaScript to run this app.</noscript>

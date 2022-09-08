@@ -15,4 +15,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::any('/{view?}', function () {
     return view('welcome');
-});
+})->where('view', '^(?!nova|nova-api|nova-vendor).*$');

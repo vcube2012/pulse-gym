@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Models\Blog;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -21,7 +22,8 @@ class BlogResource extends JsonResource
             'image' => $this->image,
             'description' => $this->description,
             'tags' => TagResource::collection($this->whenLoaded('tags')),
-            'date' => $this->created_at
+            'date' => $this->created_at,
+            'next' => Blog::query()->whereId($this->id + 1)->first()?->slug
         ];
     }
 }

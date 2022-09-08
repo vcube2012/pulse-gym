@@ -18,7 +18,7 @@ class CoachSeeder extends Seeder
     {
         Coach::factory(10)->create();
         foreach (Club::query()->get() as $item) {
-            $item->coach()->sync(Coach::get()->value('id'));
+            $item->coaches()->sync(Coach::get()->value('id'));
         }
     }
 }

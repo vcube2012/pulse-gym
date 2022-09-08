@@ -6,6 +6,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.0.2",
+        "bakerkretzmar/nova-settings-tool": "^2.0",
         "dillingham/nova-attach-many": "^2.0",
         "ebess/advanced-nova-media-library": "^4.0",
         "eminiarts/nova-tabs": "^2.1",

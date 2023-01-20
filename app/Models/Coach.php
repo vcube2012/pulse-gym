@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
@@ -43,6 +44,12 @@ class Coach extends Model
         'social' => 'json'
     ];
 
+    protected function image(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($value) => asset(\Illuminate\Support\Facades\Storage::disk()->url($value)),
+        );
+    }
     public function getRouteKeyName()
     {
         return 'slug';

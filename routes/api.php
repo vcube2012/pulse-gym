@@ -22,3 +22,18 @@ Route::get('clubs' , [\App\Http\Controllers\ClubController::class , 'index']);
 Route::get('clubs/{club:slug}' , [\App\Http\Controllers\ClubController::class , 'show']);
 Route::get('clubs/{club:slug}/coach/{coach:slug}' , [\App\Http\Controllers\CoachController::class , 'show']);
 Route::get('page/{page:slug}' , [\App\Http\Controllers\PageController::class , 'show']);
+Route::get('test' , function(){
+    $aaa=[
+        ['sdfsf'],
+        ['sdfsf'],
+        ['sdfsf'],
+    ];
+    $bbb=[
+        ['sdfsf'],
+        ['sdfsf'],
+        ['sdfsf'],
+    ];
+    $aaa=$bbb;
+    return array_merge($aaa,$bbb);
+//    return \App\Models\Club::find(2)->scopeWeek();
+});

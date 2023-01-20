@@ -8,7 +8,9 @@ use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Trix;
 
 class BlogResource extends Resource
 {
@@ -26,18 +28,16 @@ class BlogResource extends Resource
             ID::make()->sortable(),
 
             Text::make('Slug')
-                ->sortable()
-                ->rules('required'),
+                ->sortable(),
 
             Text::make('Title')
                 ->sortable()
                 ->rules('required'),
 
-            Text::make('Image')
-                ->sortable()
-                ->rules('required'),
+            Image::make('Image', 'image')
+                ->sortable(),
 
-            Text::make('Description')
+            Trix::make('Description')
                 ->sortable()
                 ->rules('required'),
 

@@ -16,7 +16,7 @@ class ClubController extends Controller
      */
     public function index()
     {
-        return ClubResource::collection(Club::with(['services'])->paginate());
+        return ClubResource::collection(Club::with(['services'])->paginate(25));
     }
 
     /**

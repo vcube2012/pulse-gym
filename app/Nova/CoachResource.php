@@ -7,6 +7,7 @@ use App\Models\Specialization;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
 use NovaAttachMany\AttachMany;
@@ -41,7 +42,7 @@ class CoachResource extends Resource
                 ->sortable()
                 ->rules('nullable'),
 
-            Text::make('Image')
+            Image::make('Image','image')
                 ->sortable()
                 ->rules('required'),
 

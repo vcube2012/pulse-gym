@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -39,6 +40,13 @@ class Blog extends Model
     use HasFactory , HasSlug;
 
     protected $fillable = ['slug', 'title', 'image', 'description'];
+
+    protected function image(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($value) => asset(\Illuminate\Support\Facades\Storage::disk()->url($value)),
+        );
+    }
 
     public function tags(): BelongsToMany
     {

@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
+use App\Service\WeekScheduleService;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
+use Psy\Readline\Hoa\Console;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
@@ -60,6 +63,13 @@ class Club extends Model implements HasMedia
     protected $casts = [
         'phone' => 'json',
     ];
+
+    protected function image(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($value) => asset(\Illuminate\Support\Facades\Storage::disk()->url($value)),
+        );
+    }
 
     public function feedback()
     {
@@ -122,4 +132,11 @@ class Club extends Model implements HasMedia
             return [];
         }
     }
+
+    public function scopeWeek(){
+
+        $schedules=new WeekScheduleService();
+        return $schedules->getSchedule($this->schedule) ;
+    }
+
 }

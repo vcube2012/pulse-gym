@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Text;
 use NovaAttachMany\AttachMany;
 use Whitecube\NovaFlexibleContent\Flexible;
@@ -35,7 +36,7 @@ class ClubResource extends Resource
             Text::make('Address')
                 ->sortable()
                 ->rules('required'),
-            Text::make('image')
+            Image::make('image','image')
                 ->rules('required'),
 
             Text::make('Lat')
@@ -54,9 +55,11 @@ class ClubResource extends Resource
             AttachMany::make('price_category', 'price' , PriceCategoryResource::class),
             BelongsToMany::make('price_category', 'price' , PriceCategoryResource::class),
 
-            AttachMany::make('coaches', 'coaches' , CoachResource::class),
+            AttachMany::make('coaches', 'coaches' , CoachResource::class)->display('name'),
             BelongsToMany::make('coaches', 'coaches' , CoachResource::class),
 
+            AttachMany::make('services', 'services' , ServiceResource::class)->display('name'),
+            BelongsToMany::make('services', 'services' , ServiceResource::class),
 //            AttachMany::make('schedule', 'schedule' , ScheduleResource::class),
 //            BelongsToMany::make('schedule', 'schedule' , ScheduleResource::class),
 

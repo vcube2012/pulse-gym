@@ -15,44 +15,44 @@ class WeekScheduleService
             'name' => '',
             'from' => '',
             'day' => 0,
-            'recruiting' => true,
+            'recruiting' => false,
         ];
         $this->week = [
             [
                 'name' => 'TRX',
                 'from' => '',
                 'day' => 0,
-                'recruiting' => true,
+                'recruiting' => false,
             ],
             [
                 'name' => 'TRX',
                 'from' => '',
                 'day' => 1,
-                'recruiting' => true,
+                'recruiting' => false,
             ],
             [
                 'name' => 'TRX',
                 'from' => '',
                 'day' => 2,
-                'recruiting' => true,
+                'recruiting' => false,
             ],
             [
                 'name' => 'TRX',
                 'from' => '',
                 'day' => 3,
-                'recruiting' => true,
+                'recruiting' => false,
             ],
             [
                 'name' => 'TRX',
                 'from' => '',
                 'day' => 4,
-                'recruiting' => true,
+                'recruiting' => false,
             ],
             [
                 'name' => 'TRX',
                 'from' => '',
                 'day' => 5,
-                'recruiting' => true,
+                'recruiting' => false,
             ],
 
         ];
@@ -82,6 +82,7 @@ class WeekScheduleService
                 if (strcmp($schedule->service->name, $name) == 0) {
                     $week[$schedule->day]['from'] = $schedule->from;
                     $week[$schedule->day]['name'] = $schedule->service->name;
+                    $week[$schedule->day]['recruiting'] = $schedule->recruiting;
                 }
             }
             $schedules_new = array_merge($schedules_new, $week);
@@ -92,6 +93,7 @@ class WeekScheduleService
             $day['name']=$schedule->service->name;
             $day['day']=$schedule->day;
             $day['from']=$schedule->from;
+            $day['recruiting']=$schedule->recruiting;
             if(!in_array($day,$schedules_new ))
             {
                 $schedules_new[]=$day;

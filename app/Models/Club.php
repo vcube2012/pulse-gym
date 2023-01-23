@@ -67,7 +67,7 @@ class Club extends Model implements HasMedia
     protected function image(): Attribute
     {
         return Attribute::make(
-            get: fn ($value) => asset(\Illuminate\Support\Facades\Storage::disk()->url($value)),
+            get: fn ($value) => asset($value),
         );
     }
 

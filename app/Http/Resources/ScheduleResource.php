@@ -15,9 +15,9 @@ class ScheduleResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'from' => $this->from,
-            'day' => $this->day,
-            'recruiting' => $this->recruiting,
+            'from' => $this['from'],
+            'day' => $this['day'],
+            'recruiting' => $this['recruiting'],
         ];
     }
 }

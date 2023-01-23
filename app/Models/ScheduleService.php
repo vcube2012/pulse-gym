@@ -17,4 +17,5 @@ class ScheduleService extends Model
     {
         return $this->belongsTo(Schedule::class);
     }
+
 }

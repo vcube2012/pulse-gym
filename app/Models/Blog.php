@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Facades\Storage;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 
@@ -41,11 +42,9 @@ class Blog extends Model
 
     protected $fillable = ['slug', 'title', 'image', 'description'];
 
-    protected function image(): Attribute
+    public function getImageUrlAttribute():string
     {
-        return Attribute::make(
-            get: fn ($value) => asset(\Illuminate\Support\Facades\Storage::disk()->url($value)),
-        );
+        return  asset(Storage::url($this->image));
     }
 
     public function tags(): BelongsToMany

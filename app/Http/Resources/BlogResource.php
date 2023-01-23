@@ -19,7 +19,7 @@ class BlogResource extends JsonResource
             'id' => $this->id,
             'slug' => $this->slug,
             'title' => $this->title,
-            'image' => $this->image,
+            'image' => $this->imageUrl,
             'description' => $this->description,
             'tags' => TagResource::collection($this->whenLoaded('tags')),
             'date' => $this->created_at,

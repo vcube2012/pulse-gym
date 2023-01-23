@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Storage;
 use Psy\Readline\Hoa\Console;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
@@ -64,11 +65,9 @@ class Club extends Model implements HasMedia
         'phone' => 'json',
     ];
 
-    protected function image(): Attribute
+    public function getImageUrlAttribute():string
     {
-        return Attribute::make(
-            get: fn ($value) => '/storage/'.$value,
-        );
+        return  asset(Storage::url($this->image));
     }
 
     public function feedback()

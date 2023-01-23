@@ -19,7 +19,7 @@ class CoachResource extends JsonResource
             'name' => $this->name,
             'slug' => $this->slug,
             'title' => $this->title,
-            'image' => $this->image,
+            'image' => $this->imageUrl,
             'description' => $this->description,
             'phone' => $this->phone,
             'social' => $this->getSocial(),

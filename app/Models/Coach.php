@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Storage;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 
@@ -44,11 +45,9 @@ class Coach extends Model
         'social' => 'json'
     ];
 
-    protected function image(): Attribute
+    public function getImageUrlAttribute():string
     {
-        return Attribute::make(
-            get: fn ($value) => asset(\Illuminate\Support\Facades\Storage::disk()->url($value)),
-        );
+        return  asset(Storage::url($this->image));
     }
     public function getRouteKeyName()
     {

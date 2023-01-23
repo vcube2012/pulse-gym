@@ -5,6 +5,8 @@ namespace App\Http\Resources;
 use Ebess\AdvancedNovaMediaLibrary\Http\Resources\MediaResource;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Facades\Storage;
+use function Illuminate\Support\Facades\Storage;
 
 
 class ClubResource extends JsonResource
@@ -19,7 +21,7 @@ class ClubResource extends JsonResource
             'id' => $this->id,
             'slug' => $this->slug,
             'name' => $this->name,
-            'image' => $this->image,
+            'image' =>$this->imageUrl,
             'new' => $this->new,
             'address' => $this->address,
             'lat' => $this->lat,

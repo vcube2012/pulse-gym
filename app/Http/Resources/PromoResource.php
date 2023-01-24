@@ -18,6 +18,7 @@ class PromoResource extends JsonResource
             'sub_title'=>$this->sub_title,
             'title'=>$this->title,
             'description'=>$this->description,
+            'mobile_title'=>$this->mobile_title,
             'images'=>$this->getImages(),
         ];
     }

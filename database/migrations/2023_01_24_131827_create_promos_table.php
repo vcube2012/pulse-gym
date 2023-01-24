@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('sub_title');
+            $table->string('mobile_title');
             $table->text('description');
             $table->json('images');
             $table->timestamps();

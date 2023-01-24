@@ -54,6 +54,9 @@ class PromoResource extends Resource
             Text::make('Description','description')
                 ->sortable()
                 ->rules('required'),
+            Text::make('Mobile title','mobile_title')
+                ->sortable()
+                ->rules('required'),
             Flexible::make('Images','images')->addLayout('Images', 'images', [
                 Image::make('image'),
             ]),

@@ -55,5 +55,6 @@ class DatabaseSeeder extends Seeder
         $this->call(BlogsTableSeeder::class);
 
         $this->call(BlogTagTableSeeder::class);
+        $this->call(PromosTableSeeder::class);
     }
 }

@@ -16,7 +16,7 @@ return new class extends Migration {
             $table->id();
             $table->integer('sort')->index();
             $table->string('slug')->index();
-            $table->string('name')->index();
+            $table->text('name')->index();
             $table->timestamps();
         });
         Schema::create('blog_tag', function (Blueprint $table) {

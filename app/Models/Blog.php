@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Facades\Storage;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
+use Spatie\Translatable\HasTranslations;
 
 /**
  * App\Models\Blog
@@ -38,13 +39,16 @@ use Spatie\Sluggable\SlugOptions;
  */
 class Blog extends Model
 {
-    use HasFactory , HasSlug;
+    use HasFactory, HasSlug;
+    use HasTranslations;
+    protected array $translatable = ['title', 'description'];
 
-    protected $fillable = ['slug', 'title', 'image', 'description'];
+    protected $fillable = ['slug', 'title','image', 'description'];
 
-    public function getImageUrlAttribute():string
+
+    public function getImageUrlAttribute(): string
     {
-        return  asset(Storage::url($this->image));
+        return asset(Storage::url($this->image));
     }
 
     public function tags(): BelongsToMany
@@ -52,10 +56,10 @@ class Blog extends Model
         return $this->belongsToMany(Tag::class);
     }
 
-    public function getSlugOptions() : SlugOptions
+    public function getSlugOptions(): SlugOptions
     {
         return SlugOptions::create()
-            ->generateSlugsFrom('title')
+            ->generateSlugsFrom('title',)
             ->saveSlugsTo('slug');
     }
 }

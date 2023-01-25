@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Translatable\HasTranslations;
 
 /**
  * App\Models\PriceCategory
@@ -35,6 +36,9 @@ use Illuminate\Database\Eloquent\Model;
 class PriceCategory extends Model
 {
     use HasFactory;
+    use HasTranslations;
+
+    protected array $translatable=['name','comment'];
 
     public function price(): \Illuminate\Database\Eloquent\Relations\HasMany
     {

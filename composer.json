@@ -19,6 +19,8 @@
         "orangehill/iseed": "^3.0",
         "outl1ne/nova-sortable": "^3.2",
         "spatie/laravel-sluggable": "^3.4",
+        "spatie/laravel-translatable": "^6.3",
+        "spatie/nova-translatable": "^3.1",
         "spiral/roadrunner": "^2.8.2",
         "whitecube/nova-flexible-content": "^1.0"
     },

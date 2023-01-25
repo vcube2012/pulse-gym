@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('services', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->index();
+            $table->text('name')->index();
             $table->timestamps();
         });
         Schema::create('club_service', function (Blueprint $table) {

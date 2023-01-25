@@ -8,6 +8,7 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Trix;
+use Spatie\NovaTranslatable\Translatable;
 
 class PageResource extends Resource
 {
@@ -23,9 +24,11 @@ class PageResource extends Resource
     {
         return [
             ID::make()->sortable(),
-            Text::make('name'),
+            Translatable::make([
+                Text::make('name'),
+                Trix::make('text'),
+            ]),
             Slug::make('slug')->nullable(),
-            Trix::make('text'),
         ];
     }
 

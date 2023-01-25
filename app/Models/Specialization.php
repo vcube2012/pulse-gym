@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Translatable\HasTranslations;
 
 /**
  * App\Models\Specialization
@@ -16,7 +17,10 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Specialization extends Model
 {
-    use HasFactory;
+    use HasFactory ;
+    use HasTranslations;
+
+    protected array $translatable=['name'];
 
     public function coach(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
     {

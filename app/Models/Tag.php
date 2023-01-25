@@ -10,6 +10,7 @@ use Spatie\EloquentSortable\Sortable;
 use Spatie\EloquentSortable\SortableTrait;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
+use Spatie\Translatable\HasTranslations;
 
 /**
  * App\Models\Tag
@@ -38,12 +39,15 @@ use Spatie\Sluggable\SlugOptions;
 class Tag extends Model implements Sortable
 {
     use HasFactory, HasSlug, SortableTrait;
+    use HasTranslations;
 
     public $sortable = [
         'order_column_name' => 'sort',
         'sort_when_creating' => true,
     ];
     protected $fillable = ['slug', 'name'];
+
+    protected array $translatable=['name'];
 
     public function blogs(): BelongsToMany
     {
@@ -53,7 +57,7 @@ class Tag extends Model implements Sortable
     public function getSlugOptions(): SlugOptions
     {
         return SlugOptions::create()
-            ->generateSlugsFrom('name')
+            ->generateSlugsFrom('name.ru')
             ->saveSlugsTo('slug');
     }
 }

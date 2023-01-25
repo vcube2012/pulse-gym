@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Translatable\HasTranslations;
 
 /**
  * App\Models\Price
@@ -33,7 +34,9 @@ use Illuminate\Database\Eloquent\Model;
 class Price extends Model
 {
     use HasFactory;
+    use HasTranslations;
 
+    protected array $translatable= ['name', 'comment'];
     public function getPriceValueAttribute()
     {
         if($this->month){

@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('price_categories', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->text('name');
             $table->string('color');
             $table->boolean('new')->default(false);
             $table->boolean('actia')->default(false);

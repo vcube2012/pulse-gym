@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Translatable\HasTranslations;
 
 /**
  * App\Models\Services
@@ -28,6 +29,10 @@ use Illuminate\Database\Eloquent\Model;
 class Service extends Model
 {
     use HasFactory;
+    use HasTranslations;
+
+    protected array $translatable=['name'];
+
     protected $fillable = ['name'];
 
     public function clubs(): \Illuminate\Database\Eloquent\Relations\BelongsToMany

@@ -15,6 +15,7 @@ use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
+use Spatie\Translatable\HasTranslations;
 
 /**
  * App\Models\Club
@@ -61,9 +62,13 @@ class Club extends Model implements HasMedia
 
     use HasFactory;
 
+    use HasTranslations;
+    protected array $translatable = ['name', 'address'];
+
     protected $casts = [
         'phone' => 'json',
     ];
+
 
     public function getImageUrlAttribute():string
     {

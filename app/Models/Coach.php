@@ -9,6 +9,7 @@ use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Storage;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
+use Spatie\Translatable\HasTranslations;
 
 /**
  * App\Models\Coach
@@ -40,10 +41,11 @@ use Spatie\Sluggable\SlugOptions;
 class Coach extends Model
 {
     use HasFactory, HasSlug;
-
+    use HasTranslations;
     protected $casts = [
         'social' => 'json'
     ];
+    protected array $translatable = ['name', 'title', 'description'];
 
     public function getImageUrlAttribute():string
     {

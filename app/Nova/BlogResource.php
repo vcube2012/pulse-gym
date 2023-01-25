@@ -11,6 +11,7 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Trix;
+use Spatie\NovaTranslatable\Translatable;
 
 class BlogResource extends Resource
 {
@@ -29,18 +30,18 @@ class BlogResource extends Resource
 
             Text::make('Slug')
                 ->sortable(),
+            Translatable::make([
+                Text::make('Title')
+                    ->sortable()
+                    ->rules('required'),
 
-            Text::make('Title')
-                ->sortable()
-                ->rules('required'),
+                Trix::make('Description')
+                    ->sortable()
+                    ->rules('required'),
+            ]),
 
             Image::make('Image', 'image')
                 ->sortable(),
-
-            Trix::make('Description')
-                ->sortable()
-                ->rules('required'),
-
             BelongsToMany::make('Tags', 'tags', TagResource::class),
         ];
     }

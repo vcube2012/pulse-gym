@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('clubs', function (Blueprint $table) {
             $table->id();
             $table->string('slug')->index();
-            $table->string('name');
+            $table->text('name');
             $table->string('image');
             $table->boolean('new')->default(false);
             $table->text('address');

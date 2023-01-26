@@ -8,6 +8,7 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Spatie\NovaTranslatable\Translatable;
 use Whitecube\NovaFlexibleContent\Flexible;
 
 class PromoResource extends Resource
@@ -45,18 +46,20 @@ class PromoResource extends Resource
     {
         return [
             ID::make()->sortable(),
-            Text::make('sub_title','sub_title')
-                ->sortable()
-                ->rules('required'),
-            Text::make('Title','title')
-                ->sortable()
-                ->rules('required'),
-            Text::make('Description','description')
-                ->sortable()
-                ->rules('required'),
-            Text::make('Mobile title','mobile_title')
-                ->sortable()
-                ->rules('required'),
+            Translatable::make([
+                Text::make('sub_title','sub_title')
+                    ->sortable()
+                    ->rules('required'),
+                Text::make('Title','title')
+                    ->sortable()
+                    ->rules('required'),
+                Text::make('Description','description')
+                    ->sortable()
+                    ->rules('required'),
+                Text::make('Mobile title','mobile_title')
+                    ->sortable()
+                    ->rules('required'),
+            ]),
             Flexible::make('Images','images')->addLayout('Images', 'images', [
                 Image::make('image'),
             ]),

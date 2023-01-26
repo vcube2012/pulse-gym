@@ -35,16 +35,16 @@ class TranslateService
     public function make()
     {
         $list_model = [
-            ['model' => Club::query(), 'field' => ['name', 'address']],
-            ['model' => Coach::query(), 'field' => ['name', 'title', 'description']],
-            ['model' => Page::query(), 'field' => ['name', 'text']],
-            ['model' => Price::query(), 'field' => ['name','comment']],
-            ['model' => PriceCategory::query(), 'field' => ['name','comment']],
+//            ['model' => Club::query(), 'field' => ['name', 'address']],
+//            ['model' => Coach::query(), 'field' => ['name', 'title', 'description']],
+//            ['model' => Page::query(), 'field' => ['name', 'text']],
+//            ['model' => Price::query(), 'field' => ['name','comment']],
+//            ['model' => PriceCategory::query(), 'field' => ['name','comment']],
             ['model' => Promo::query(), 'field' => ['title', 'sub_title', 'mobile_title', 'description']],
-            ['model' => Service::query(), 'field' => ['name']],
-            ['model' => Specialization::query(), 'field' => ['name']],
-            ['model' => Tag::query(), 'field' => ['name']],
-            ['model' => Blog::query(), 'field' => ['title', 'description']],
+//            ['model' => Service::query(), 'field' => ['name']],
+//            ['model' => Specialization::query(), 'field' => ['name']],
+//            ['model' => Tag::query(), 'field' => ['name']],
+//            ['model' => Blog::query(), 'field' => ['title', 'description']],
         ];
 
         foreach ($list_model as $item) {

@@ -6,6 +6,7 @@ use App\Models\Service;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
+use Spatie\NovaTranslatable\Translatable;
 
 class ServiceResource extends Resource
 {
@@ -21,10 +22,11 @@ class ServiceResource extends Resource
     {
         return [
             ID::make()->sortable(),
-
-            Text::make('Name')
-                ->sortable()
-                ->rules('required'),
+            Translatable::make([
+                Text::make('Name')
+                    ->sortable()
+                    ->rules('required'),
+            ]),
         ];
     }
 

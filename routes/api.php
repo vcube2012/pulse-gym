@@ -25,5 +25,6 @@ use Illuminate\Support\Facades\Route;
     Route::get('page/{page:slug}', [\App\Http\Controllers\PageController::class, 'show']);
     Route::get('promo', [\App\Http\Controllers\PromoController::class, 'index']);
 Route::get('test', function () {
-    return new \App\Http\Resources\PromoResource(Promo::all()->first());
+    $item=Promo::all()->first();
+    return $item->title;
 });

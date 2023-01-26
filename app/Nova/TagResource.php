@@ -10,10 +10,12 @@ use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Outl1ne\NovaSortable\Traits\HasSortableRows;
+use Spatie\NovaTranslatable\Translatable;
 
 class TagResource extends Resource
 {
     use HasSortableRows;
+
     public static $model = Tag::class;
 
     public static $title = 'name';
@@ -26,14 +28,16 @@ class TagResource extends Resource
     {
         return [
             ID::make()->sortable(),
+            Translatable::make([
+                Text::make('Slug')
+                    ->sortable()
+                    ->rules('required'),
 
-            Text::make('Slug')
-                ->sortable()
-                ->rules('required'),
+                Text::make('Name')
+                    ->sortable()
+                    ->rules('required'),
+            ]),
 
-            Text::make('Name')
-                ->sortable()
-                ->rules('required'),
 
             BelongsToMany::make('blogs', 'blogs', BlogResource::class),
         ];

@@ -6,6 +6,7 @@ use App\Models\Specialization;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
+use Spatie\NovaTranslatable\Translatable;
 
 class SpecializationResource extends Resource
 {
@@ -26,7 +27,9 @@ class SpecializationResource extends Resource
     {
         return [
             ID::make()->sortable(),
-            Text::make('name')
+            Translatable::make([
+                Text::make('name')
+            ]),
         ];
     }
 

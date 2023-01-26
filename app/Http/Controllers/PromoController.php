@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class PromoController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         return new PromoResource(Promo::all()->first());
     }

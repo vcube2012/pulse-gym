@@ -11,6 +11,7 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Text;
 use NovaAttachMany\AttachMany;
+use Spatie\NovaTranslatable\Translatable;
 use Whitecube\NovaFlexibleContent\Flexible;
 
 class ClubResource extends Resource
@@ -27,15 +28,18 @@ class ClubResource extends Resource
     {
         return [
             ID::make()->sortable(),
+            Translatable::make([
+                Text::make('Name')
+                    ->sortable()
+                    ->rules('required'),
+            ]),
 
-            Text::make('Name')
-                ->sortable()
-                ->rules('required'),
             Text::make('slug'),
-
-            Text::make('Address')
-                ->sortable()
-                ->rules('required'),
+            Translatable::make([
+                Text::make('Address')
+                    ->sortable()
+                    ->rules('required'),
+            ]),
             Image::make('image','image')
                 ->rules('required'),
 

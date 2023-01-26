@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
+use Spatie\NovaTranslatable\Translatable;
 
 class PriceResource extends Resource
 {
@@ -22,17 +23,18 @@ class PriceResource extends Resource
     {
         return [
             ID::make()->sortable(),
-            Text::make('Name')
-                ->sortable()
-                ->rules('required'),
+            Translatable::make([
+                Text::make('Name')
+                    ->sortable()
+                    ->rules('required'),
 
+                Text::make('Comment')
+                    ->sortable()
+                    ->rules('nullable'),
+            ]),
             Text::make('Price')
                 ->sortable()
                 ->rules('required'),
-
-            Text::make('Comment')
-                ->sortable()
-                ->rules('nullable'),
         ];
     }
 

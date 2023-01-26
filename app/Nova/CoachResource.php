@@ -11,6 +11,7 @@ use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
 use NovaAttachMany\AttachMany;
+use Spatie\NovaTranslatable\Translatable;
 use Whitecube\NovaFlexibleContent\Flexible;
 
 class CoachResource extends Resource
@@ -33,22 +34,24 @@ class CoachResource extends Resource
     {
         return [
             ID::make()->sortable(),
+            Translatable::make([
+                Text::make('Name')
+                    ->sortable()
+                    ->rules('required'),
 
-            Text::make('Name')
-                ->sortable()
-                ->rules('required'),
-
-            Text::make('Title')
-                ->sortable()
-                ->rules('nullable'),
-
+                Text::make('Title')
+                    ->sortable()
+                    ->rules('nullable'),
+            ]),
             Image::make('Image','image')
                 ->sortable()
                 ->rules('required'),
 
-            Text::make('Description')
-                ->sortable()
-                ->rules('required'),
+            Translatable::make([
+                Text::make('Description')
+                    ->sortable()
+                    ->rules('required'),
+            ]),
 
             Text::make('Phone')
                 ->sortable()

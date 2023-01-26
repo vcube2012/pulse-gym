@@ -22,6 +22,76 @@
     <link rel="manifest" href="/favicon/manifest.json">
     <meta name="theme-color" content="#ffffff">
     <title>Pulse Gym</title>
+    <style>.preloader-page {
+            position: fixed;
+            z-index: 1001;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            background: #070713;
+            border-radius: inherit;
+            -webkit-transition-duration: .3s;
+            transition-duration: .3s;
+            -webkit-transition-property: opacity;
+            transition-property: opacity;
+            box-sizing: border-box
+        }
+
+        .preloader-page svg {
+            width: 200px;
+            height: 200px;
+            margin-bottom: 30px;
+            -webkit-animation: pulse 1.5s infinite ease-in-out both;
+            -o-animation: pulse 1.5s infinite ease-in-out both;
+            -ms-animation: pulse 1.5s infinite ease-in-out both;
+            -moz-animation: pulse 1.5s infinite ease-in-out both;
+            animation: pulse 1.5s infinite ease-in-out both;
+            box-sizing: border-box
+        }
+
+        @-webkit-keyframes pulse {
+            0% {
+                -webkit-transform: scale(.9);
+                opacity: .2
+            }
+            50% {
+                -webkit-transform: scale(1);
+                opacity: 1
+            }
+            100% {
+                -webkit-transform: scale(.9);
+                opacity: .2
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(.9);
+                opacity: .2
+            }
+            50% {
+                transform: scale(1);
+                opacity: 1
+            }
+            100% {
+                transform: scale(.9);
+                opacity: .2
+            }
+        }</style>
     <script defer="defer" src="/static/js/main.js?v={{ time() }}"></script>
     <link href="/static/css/main.css?v={{ time() }}" rel="stylesheet">
 </head>

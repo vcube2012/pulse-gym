@@ -12,12 +12,13 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('test' , function (){
+Route::get('test', function () {
     app(\App\Service\TranslateService::class)->make();
 });
+Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localize']], function () {
 
-Route::any('/{view?}', function () {
-    return view('welcome');
-})->where('view', '^(?!nova|nova-api|nova-vendor).*$');
+    Route::any('/{view?}', function () {
+        return view('welcome');
+    })->where('view', '^(?!nova|nova-api|nova-vendor).*$');
 
-
+});

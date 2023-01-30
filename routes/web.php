@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,8 +15,6 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 Route::get('test', function () {
     app(\App\Service\TranslateService::class)->make();
 });
-Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localize']], function () {
     Route::any('/{view?}', function () {
         return view('welcome');
     })->where('view', '^(?!nova|nova-api|nova-vendor).*$');
-});

@@ -13,6 +13,7 @@ use App\Models\Schedule;
 use App\Models\Service;
 use App\Models\Specialization;
 use App\Models\Tag;
+use JoggApp\GoogleTranslate\GoogleTranslate;
 
 class TranslateService
 {
@@ -21,11 +22,13 @@ class TranslateService
     {
         foreach ($model->get() as $item) {
             foreach ($field as $f) {
-                $item->{$f} = [
-                    'uk' => $item->{$f},
-                    'ru' => $item->{$f},
-                ];
 
+                $it=json_decode($item->{$f});
+
+                $item->{$f} = [
+                    'uk' => GoogleTranslate::translate($it->ru),
+                    'ru' => $it->ru,
+                ];
             }
             $item->save();
 

@@ -57,7 +57,7 @@ class Tag extends Model implements Sortable
     public function getSlugOptions(): SlugOptions
     {
         return SlugOptions::create()
-            ->generateSlugsFrom('name.ru')
+            ->generateSlugsFrom('name')
             ->saveSlugsTo('slug');
     }
 }

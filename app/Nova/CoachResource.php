@@ -44,8 +44,7 @@ class CoachResource extends Resource
                     ->rules('nullable'),
             ]),
             Image::make('Image','image')
-                ->sortable()
-                ->rules('required'),
+                ->sortable(),
 
             Translatable::make([
                 Text::make('Description')

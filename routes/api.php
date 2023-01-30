@@ -24,7 +24,4 @@ use Illuminate\Support\Facades\Route;
     Route::get('clubs/{club:slug}/coach/{coach:slug}', [\App\Http\Controllers\CoachController::class, 'show']);
     Route::get('page/{page:slug}', [\App\Http\Controllers\PageController::class, 'show']);
     Route::get('promo', [\App\Http\Controllers\PromoController::class, 'index']);
-Route::get('test', function () {
-    $item=Promo::all()->first();
-    return $item->title;
-});
+

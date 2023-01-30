@@ -28,11 +28,10 @@ class TagResource extends Resource
     {
         return [
             ID::make()->sortable(),
-            Translatable::make([
-                Text::make('Slug')
-                    ->sortable()
-                    ->rules('required'),
+            Text::make('Slug')
+                ->sortable(),
 
+            Translatable::make([
                 Text::make('Name')
                     ->sortable()
                     ->rules('required'),

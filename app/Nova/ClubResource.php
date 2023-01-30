@@ -40,8 +40,7 @@ class ClubResource extends Resource
                     ->sortable()
                     ->rules('required'),
             ]),
-            Image::make('image','image')
-                ->rules('required'),
+            Image::make('image','image'),
 
             Text::make('Lat')
                 ->sortable()

@@ -92,8 +92,8 @@
                 opacity: .2
             }
         }</style>
-    <script defer="defer" src="/static/js/main.f2694c54.js"></script>
-    <link href="/static/css/main.438a2d07.css" rel="stylesheet">
+    <script defer="defer" src="/static/js/main.7508c5f1.js"></script>
+    <link href="/static/css/main.de5316b3.css" rel="stylesheet">
 </head>
 <body>
 <noscript>You need to enable JavaScript to run this app.</noscript>

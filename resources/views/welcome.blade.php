@@ -92,11 +92,17 @@
                 opacity: .2
             }
         }</style>
-    <script defer="defer" src="/static/js/main.js?v={{ time() }}"></script>
-    <link href="/static/css/main.css?v={{ time() }}" rel="stylesheet">
+    <script defer="defer" src="/static/js/main.f2694c54.js"></script>
+    <link href="/static/css/main.438a2d07.css" rel="stylesheet">
 </head>
 <body>
-
+<noscript>You need to enable JavaScript to run this app.</noscript>
+<script>window.setting = {
+        email: 'vcube.su@gmail.com',
+        instagram: 'https://www.youtube.com/watch?v=Le9qfqLYs8M',
+        facebook: 'https://www.youtube.com/watch?v=Le9qfqLYs8M',
+        schedule: 'Пн - Сб с 8:00 до 22:00|Вс с 8:00 до 20:00',
+    }</script>
 <div class="preloader-page">
     <svg viewBox="0 0 144 63" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
@@ -110,7 +116,6 @@
             fill="#FFA621"/>
     </svg>
 </div>
-<noscript>You need to enable JavaScript to run this app.</noscript>
 <div id="root"></div>
 <script>
     window.setting = {!! \Illuminate\Support\Facades\File::get(storage_path('app/settings.json')) !!}

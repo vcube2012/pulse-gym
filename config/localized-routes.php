@@ -5,12 +5,12 @@ return [
     /**
      * The locales you wish to support.
      */
-    'supported-locales' => ['ru' , 'ua'],
+    'supported-locales' => ['ru', 'uk'],
 
     /**
      * The fallback locale to use when a provided locale is not supported.
      */
-    'fallback_locale' => 'ua',
+    'fallback_locale' => 'uk',
 
     /**
      * If you have a main locale and don't want
@@ -18,7 +18,7 @@ return [
      *
      * 'omit_url_prefix_for_locale' => 'en',
      */
-    'omit_url_prefix_for_locale' => 'ua',
+    'omit_url_prefix_for_locale' => 'uk',
 
     /**
      * Set this option to true if you want to redirect

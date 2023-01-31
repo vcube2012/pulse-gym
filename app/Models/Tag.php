@@ -39,7 +39,7 @@ use Spatie\Translatable\HasTranslations;
 class Tag extends Model implements Sortable
 {
     use HasFactory, SortableTrait;
-    //use HasSlug;
+    use HasSlug;
     use HasTranslations;
 
     public $sortable = [

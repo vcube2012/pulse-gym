@@ -41,7 +41,7 @@ use Spatie\Translatable\HasTranslations;
 class Coach extends Model
 {
     use HasFactory;
-    //use HasSlug;
+    use HasSlug;
     use HasTranslations;
     protected $casts = [
         'social' => 'json'

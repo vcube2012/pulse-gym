@@ -58,10 +58,9 @@ use Spatie\Translatable\HasTranslations;
  */
 class Club extends Model implements HasMedia
 {
-    use InteractsWithMedia, HasSlug;
-
+    use InteractsWithMedia;
     use HasFactory;
-
+    //use HasSlug;
     use HasTranslations;
     protected array $translatable = ['name', 'address'];
 

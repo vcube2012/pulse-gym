@@ -39,7 +39,8 @@ use Spatie\Translatable\HasTranslations;
  */
 class Blog extends Model
 {
-    use HasFactory, HasSlug;
+    use HasFactory;
+    //use HasSlug;
     use HasTranslations;
     protected array $translatable = ['title', 'description'];
 

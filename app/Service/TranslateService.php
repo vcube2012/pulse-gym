@@ -13,7 +13,7 @@ use App\Models\Schedule;
 use App\Models\Service;
 use App\Models\Specialization;
 use App\Models\Tag;
-use JoggApp\GoogleTranslate\GoogleTranslate;
+use Illuminate\Support\Str;
 
 class TranslateService
 {
@@ -23,12 +23,13 @@ class TranslateService
         foreach ($model->get() as $item) {
             foreach ($field as $f) {
 
-                $it=json_decode($item->{$f});
-
-                $item->{$f} = [
-                    'uk' => GoogleTranslate::translate($it->ru),
-                    'ru' => $it->ru,
-                ];
+//                $it=json_decode($item->{$f});
+//                dump($it['ru']);
+//                $item->{$f} = [
+//                    'ua' => $it['uk'],
+//                    'ru' => $it['ru'],
+//                ];
+                $item->{$f} = Str::replace('uk','ua',$item->{$f});
             }
             $item->save();
 
@@ -38,16 +39,16 @@ class TranslateService
     public function make()
     {
         $list_model = [
-//            ['model' => Club::query(), 'field' => ['name', 'address']],
-//            ['model' => Coach::query(), 'field' => ['name', 'title', 'description']],
-//            ['model' => Page::query(), 'field' => ['name', 'text']],
-//            ['model' => Price::query(), 'field' => ['name','comment']],
-//            ['model' => PriceCategory::query(), 'field' => ['name','comment']],
+            ['model' => Club::query(), 'field' => ['name', 'address']],
+            ['model' => Coach::query(), 'field' => ['name', 'title', 'description']],
+            ['model' => Page::query(), 'field' => ['name', 'text']],
+            ['model' => Price::query(), 'field' => ['name','comment']],
+            ['model' => PriceCategory::query(), 'field' => ['name','comment']],
             ['model' => Promo::query(), 'field' => ['title', 'sub_title', 'mobile_title', 'description']],
-//            ['model' => Service::query(), 'field' => ['name']],
-//            ['model' => Specialization::query(), 'field' => ['name']],
-//            ['model' => Tag::query(), 'field' => ['name']],
-//            ['model' => Blog::query(), 'field' => ['title', 'description']],
+            ['model' => Service::query(), 'field' => ['name']],
+            ['model' => Specialization::query(), 'field' => ['name']],
+            ['model' => Tag::query(), 'field' => ['name']],
+            ['model' => Blog::query(), 'field' => ['title', 'description']],
         ];
 
         foreach ($list_model as $item) {

@@ -10,7 +10,8 @@ use Spatie\Translatable\HasTranslations;
 
 class Page extends Model
 {
-    use HasFactory, HasSlug;
+    use HasFactory;
+    //use HasSlug;
     use HasTranslations;
     protected array $translatable = ['name', 'text'];
     public function getSlugOptions(): SlugOptions

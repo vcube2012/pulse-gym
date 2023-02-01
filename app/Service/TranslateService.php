@@ -29,7 +29,11 @@ class TranslateService
 //                    'ua' => $it['uk'],
 //                    'ru' => $it['ru'],
 //                ];
-                $item->{$f} = Str::replace('ua','uk',$item->{$f});
+
+                $js = json_encode($item->getTranslations($f));
+                $item->setTranslations($f ,
+                    json_decode(Str::replace('ua','uk',$js ))
+                );
             }
             $item->save();
 

@@ -43,7 +43,7 @@ class PageController extends Controller
 
     public function show(Page $page)
     {
-        return $page;
+        return PageResource::make($page);
     }
 
     /**

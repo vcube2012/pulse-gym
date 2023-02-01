@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
+Route::middleware("localization")->group(function () {
     Route::get('/tags', [\App\Http\Controllers\TagController::class, 'index']);
     Route::get('blogs', [\App\Http\Controllers\BlogController::class, 'index']);
     Route::get('blogs/{blog:slug}', [\App\Http\Controllers\BlogController::class, 'show']);
@@ -25,3 +27,4 @@ use Illuminate\Support\Facades\Route;
     Route::get('page/{page:slug}', [\App\Http\Controllers\PageController::class, 'show']);
     Route::get('promo', [\App\Http\Controllers\PromoController::class, 'index']);
 
+});

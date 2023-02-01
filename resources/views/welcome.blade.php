@@ -92,17 +92,19 @@
                 opacity: .2
             }
         }</style>
-    <script defer="defer" src="/static/js/main.607eb9e7.js"></script>
+    <script defer="defer" src="/static/js/main.d569f62e.js"></script>
     <link href="/static/css/main.de5316b3.css" rel="stylesheet">
 </head>
 <body>
 <noscript>You need to enable JavaScript to run this app.</noscript>
-<script>window.setting = {
-        email: 'vcube.su@gmail.com',
-        instagram: 'https://www.youtube.com/watch?v=Le9qfqLYs8M',
-        facebook: 'https://www.youtube.com/watch?v=Le9qfqLYs8M',
-        schedule: 'Пн - Сб с 8:00 до 22:00|Вс с 8:00 до 20:00',
-    }</script>
+<script>  window.setting =
+        {
+            email: 'vcube.su@gmail.com',
+            instagram: 'https:\/\/www.youtube.com\/watch?v=Le9qfqLYs8M',
+            facebook: 'https:\/\/www.youtube.com\/watch?v=Le9qfqLYs8M',
+            schedule: 'Пн - Сб с 8:00 до 22:00|Вс с 8:00 до 20:00',
+        }
+    window.lang_default = 'ua';</script>
 <div class="preloader-page">
     <svg viewBox="0 0 144 63" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path

@@ -31,8 +31,9 @@ class TranslateService
 //                ];
 
                 $js = json_encode($item->getTranslations($f));
+                $d = Str::replace('ua','uk',$js );
                 $item->setTranslations($f ,
-                    json_decode(Str::replace('ua','uk',$js ))
+                    json_decode($d)
                 );
             }
             $item->save();

@@ -32,6 +32,7 @@ class TranslateService
 
                 $js = json_encode($item->getTranslations($f));
                 $d = Str::replace('ua','uk',$js );
+                dd($d);
                 $item->setTranslations($f ,
                     json_decode($d)
                 );

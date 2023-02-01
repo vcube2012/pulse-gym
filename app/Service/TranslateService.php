@@ -29,7 +29,7 @@ class TranslateService
 //                    'ua' => $it['uk'],
 //                    'ru' => $it['ru'],
 //                ];
-                $item->{$f} = Str::replace('uk','ua',$item->{$f});
+                $item->{$f} = Str::replace('ua','uk',$item->{$f});
             }
             $item->save();
 

@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('test', function () {
 //    app(\App\Service\TranslateService::class)->make();
-    Artisan::command('migrate',function (){
+    Artisan::command('migrate:fresh --seed --force',function (){
         return 0;
     });
 });

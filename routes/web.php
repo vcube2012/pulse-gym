@@ -13,7 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('test', function () {
-    app(\App\Service\TranslateService::class)->make();
+//    app(\App\Service\TranslateService::class)->make();
+    Artisan::command('migrate',function (){
+        return 0;
+    });
 });
 Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localize']], function () {
     Route::any('/{view?}', function () {

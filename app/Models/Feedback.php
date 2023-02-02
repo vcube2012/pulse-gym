@@ -44,4 +44,8 @@ class Feedback extends Model
     {
         return $this->belongsTo(Club::class);
     }
+    public function scopeIsActive()
+    {
+        return Feedback::query()->where('active','=',true);
+    }
 }

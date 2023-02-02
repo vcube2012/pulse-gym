@@ -5,6 +5,8 @@ namespace App\Nova;
 use App\Models\Feedback;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\Boolean;
+use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Number;
@@ -40,7 +42,12 @@ class FeedbackResource extends Resource
             Text::make('Answer')
                 ->sortable()
                 ->rules('nullable'),
-            BelongsTo::make('club' , 'club' , ClubResource::class)
+
+            Date::make('Created At','created_at')
+                ->sortable(),
+            Boolean::make('Is active','active'),
+
+//            BelongsTo::make('club' , 'club' , ClubResource::class)
         ];
     }
 

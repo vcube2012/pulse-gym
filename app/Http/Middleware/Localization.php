@@ -23,7 +23,7 @@ class Localization
             /**
              * If Accept-Language header found then set it to the default locale
              */
-            $lang = explode(',', $request->header("Accept-Language"))[0];
+            $lang = \Arr::get(explode(',', $request->header("Accept-Language")) , 0 , LaravelLocalization::getDefaultLocale());
             if (in_array($lang, array_keys(LaravelLocalization::getSupportedLocales()))) {
                 App::setLocale($lang);
             }

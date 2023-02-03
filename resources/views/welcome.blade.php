@@ -92,7 +92,7 @@
                 opacity: .2
             }
         }</style>
-    <script defer="defer" src="/static/js/main.5b34dea4.js"></script>
+    <script defer="defer" src="/static/js/main.36e8f8af.js"></script>
     <link href="/static/css/main.de5316b3.css" rel="stylesheet">
 </head>
 <body>

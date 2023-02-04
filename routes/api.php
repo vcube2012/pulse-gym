@@ -26,6 +26,5 @@ Route::middleware("localization")->group(function () {
     Route::get('clubs/{club:slug}/coach/{coach:slug}', [\App\Http\Controllers\CoachController::class, 'show']);
     Route::get('page/{page:slug}', [\App\Http\Controllers\PageController::class, 'show']);
     Route::get('promo', [\App\Http\Controllers\PromoController::class, 'index']);
-    Route::get('smartfit', [\App\Http\Controllers\SmartfitController::class, 'index']);
     Route::get('smartfit/{smartfit:slug}', [\App\Http\Controllers\SmartfitController::class, 'show']);
 });

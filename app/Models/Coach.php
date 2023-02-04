@@ -73,7 +73,10 @@ class Coach extends Model
     {
         return $this->belongsToMany(Club::class);
     }
-
+    public function smartfit(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    {
+        return $this->belongsToMany(Smartfit::class);
+    }
     public function getSocial()
     {
         try {

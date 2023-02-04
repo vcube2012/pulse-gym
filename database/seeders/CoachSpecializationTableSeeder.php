@@ -329,6 +329,31 @@ class CoachSpecializationTableSeeder extends Seeder
                 'coach_id' => 43,
                 'specialization_id' => 7,
             ),
+            62 => 
+            array (
+                'coach_id' => 45,
+                'specialization_id' => 20,
+            ),
+            63 => 
+            array (
+                'coach_id' => 45,
+                'specialization_id' => 19,
+            ),
+            64 => 
+            array (
+                'coach_id' => 45,
+                'specialization_id' => 18,
+            ),
+            65 => 
+            array (
+                'coach_id' => 45,
+                'specialization_id' => 9,
+            ),
+            66 => 
+            array (
+                'coach_id' => 45,
+                'specialization_id' => 1,
+            ),
         ));
         
         

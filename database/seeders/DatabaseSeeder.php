@@ -57,5 +57,7 @@ class DatabaseSeeder extends Seeder
         $this->call(BlogTagTableSeeder::class);
         $this->call(PromosTableSeeder::class);
         $this->call(PagesTableSeeder::class);
+        $this->call(SmartfitsTableSeeder::class);
+        $this->call(CoachSmartfitTableSeeder::class);
     }
 }

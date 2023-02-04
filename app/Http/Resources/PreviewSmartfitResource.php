@@ -20,7 +20,7 @@ class PreviewSmartfitResource extends JsonResource
             'title'=>$this->title,
             'sub_title'=>$this->sub_title,
             'description'=>$this->description,
-
+            'features'=>$this->features,
         ];
     }
 }

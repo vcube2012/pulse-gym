@@ -4,6 +4,7 @@ namespace App\Nova;
 
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rules;
+use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\Gravatar;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Password;
@@ -47,7 +48,7 @@ class User extends Resource
             ID::make()->sortable(),
 
             Gravatar::make()->maxWidth(50),
-
+            Boolean::make('is_admin'),
             Text::make('Name')
                 ->sortable()
                 ->rules('required', 'max:255'),

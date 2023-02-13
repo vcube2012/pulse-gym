@@ -15,6 +15,6 @@ class SmartfitController extends Controller
 
     public function show(Smartfit $smartfit)
     {
-        return SmartfitResource::make($smartfit->load(['coaches','coaches.specialization']));
+        return SmartfitResource::make($smartfit->load(['coaches.specialization']));
     }
 }

@@ -9,6 +9,7 @@ use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Image;
+use Laravel\Nova\Fields\MorphOne;
 use Laravel\Nova\Fields\Text;
 use NovaAttachMany\AttachMany;
 use Spatie\NovaTranslatable\Translatable;
@@ -63,6 +64,7 @@ class ClubResource extends Resource
 
             AttachMany::make('services', 'services' , ServiceResource::class)->display('name'),
             BelongsToMany::make('services', 'services' , ServiceResource::class),
+            MorphOne::make('MetaData','seo',SeoResource::class),
 //            AttachMany::make('schedule', 'schedule' , ScheduleResource::class),
 //            BelongsToMany::make('schedule', 'schedule' , ScheduleResource::class),
 

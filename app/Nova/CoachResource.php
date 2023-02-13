@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Image;
+use Laravel\Nova\Fields\MorphOne;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
 use NovaAttachMany\AttachMany;
@@ -68,6 +69,7 @@ class CoachResource extends Resource
             ]),
             AttachMany::make('specialization', 'specialization' , SpecializationResource::class),
             BelongsToMany::make('specialization', 'specialization' , SpecializationResource::class),
+            MorphOne::make('MetaData','seo',SeoResource::class),
         ];
     }
 

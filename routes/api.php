@@ -28,3 +28,8 @@ Route::middleware("localization")->group(function () {
     Route::get('promo', [\App\Http\Controllers\PromoController::class, 'index']);
     Route::get('smartfit/{smartfit:slug}', [\App\Http\Controllers\SmartfitController::class, 'show']);
 });
+
+Route::get('test', function () {
+//    app(\App\Service\TranslateService::class)->make();
+    return \App\Http\Resources\BlogResource::collection(\App\Models\Coach::with('seo')->get());
+});

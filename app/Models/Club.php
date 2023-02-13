@@ -62,6 +62,7 @@ class Club extends Model implements HasMedia
     use HasFactory;
     use HasSlug;
     use HasTranslations;
+
     protected array $translatable = ['name', 'address'];
 
     protected $casts = [
@@ -69,9 +70,9 @@ class Club extends Model implements HasMedia
     ];
 
 
-    public function getImageUrlAttribute():string
+    public function getImageUrlAttribute(): string
     {
-        return  asset(Storage::url($this->image));
+        return asset(Storage::url($this->image));
     }
 
     public function feedback()
@@ -79,6 +80,10 @@ class Club extends Model implements HasMedia
         return $this->hasMany(Feedback::class);
     }
 
+    public function seo()
+    {
+        return $this->morphOne(Seo::class, 'seoeable');
+    }
 
     public function services()
     {
@@ -88,7 +93,7 @@ class Club extends Model implements HasMedia
 
     public function schedule()
     {
-        return $this->hasManyThrough(ScheduleService::class ,Schedule::class);
+        return $this->hasManyThrough(ScheduleService::class, Schedule::class);
     }
 
 
@@ -119,7 +124,6 @@ class Club extends Model implements HasMedia
     }
 
 
-
     public function getSlugOptions(): SlugOptions
     {
         return SlugOptions::create()
@@ -136,10 +140,11 @@ class Club extends Model implements HasMedia
         }
     }
 
-    public function scopeWeek(){
+    public function scopeWeek()
+    {
 
-        $schedules=new WeekScheduleService();
-        return $schedules->getSchedule($this->schedule) ;
+        $schedules = new WeekScheduleService();
+        return $schedules->getSchedule($this->schedule);
     }
 
 }

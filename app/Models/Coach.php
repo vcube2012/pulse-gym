@@ -69,6 +69,11 @@ class Coach extends Model
         return $this->belongsToMany(Specialization::class);
     }
 
+    public function seo()
+    {
+        return $this->morphOne(Seo::class, 'seoeable');
+    }
+
     public function coach(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
     {
         return $this->belongsToMany(Club::class);

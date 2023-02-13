@@ -9,6 +9,7 @@ use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Image;
+use Laravel\Nova\Fields\MorphOne;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Trix;
 use Spatie\NovaTranslatable\Translatable;
@@ -43,6 +44,7 @@ class BlogResource extends Resource
             Image::make('Image', 'image')
                 ->sortable(),
             BelongsToMany::make('Tags', 'tags', TagResource::class),
+            MorphOne::make('MetaData','seo',SeoResource::class),
         ];
     }
 

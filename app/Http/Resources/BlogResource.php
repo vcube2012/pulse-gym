@@ -23,7 +23,8 @@ class BlogResource extends JsonResource
             'description' => $this->description,
             'tags' => TagResource::collection($this->whenLoaded('tags')),
             'date' => $this->created_at,
-            'next' => Blog::query()->whereId($this->id + 1)->first()?->slug
+            'next' => Blog::query()->whereId($this->id + 1)->first()?->slug,
+            'seo' => SeoResource::make($this->whenLoaded('seo'))
         ];
     }
 }

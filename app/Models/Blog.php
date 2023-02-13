@@ -57,6 +57,10 @@ class Blog extends Model
         return $this->belongsToMany(Tag::class);
     }
 
+    public function seo()
+    {
+        return $this->morphOne(Seo::class, 'seoeable');
+    }
     public function getSlugOptions(): SlugOptions
     {
         return SlugOptions::create()

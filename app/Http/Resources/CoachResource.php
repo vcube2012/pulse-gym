@@ -24,6 +24,7 @@ class CoachResource extends JsonResource
             'phone' => $this->phone,
             'social' => $this->getSocial(),
             'specialization' => SpecializationResource::collection($this->whenLoaded('specialization')),
+            'seo' => SeoResource::make($this->whenLoaded('seo')),
         ];
     }
 }

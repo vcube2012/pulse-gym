@@ -118,8 +118,6 @@
             fill="#FFA621"/>
     </svg>
 </div>
-{{LaravelLocalization::getDefaultLocale()}}
-{{LaravelLocalization::getCurrentLocale()}}
 <div id="root"></div>
 <script>
     window.setting = {!! \Illuminate\Support\Facades\File::get(storage_path('app/settings.json')) !!}

@@ -18,6 +18,6 @@ Route::get('test', function () {
 });
 Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localize']], function () {
     Route::any('/{view?}', function () {
-        return view('test');
+        return view('welcome');
     })->where('view', '^(?!nova|nova-api|nova-vendor).*$');
 });

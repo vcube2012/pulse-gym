@@ -55,11 +55,6 @@ return [
         ],
 
         [
-            'key' => 'instagram',
-            'label' => 'Instagram',
-            'panel' => 'Social',
-        ],
-        [
             'key' => 'facebook',
             'label' => 'Facebook',
             'panel' => 'Social',
@@ -69,6 +64,7 @@ return [
             'key' => 'schedule',
             'label' => 'Режим работы:',
             'panel' => 'Social',
+            'language' => 'uk',
         ],
 
 

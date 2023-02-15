@@ -96,8 +96,6 @@
     <link href="{{asset('/static/css/main.185ae202.css')}}" rel="stylesheet">
 </head>
 <body>
-{{LaravelLocalization::getDefaultLocale()}}
-{{LaravelLocalization::getCurrentLocale()}}
 <noscript>You need to enable JavaScript to run this app.</noscript>
 <script>  window.setting =
         {
@@ -121,6 +119,8 @@
     </svg>
 </div>
 <div id="root"></div>
+{{LaravelLocalization::getDefaultLocale()}}
+{{LaravelLocalization::getCurrentLocale()}}
 <script>
     window.setting = {!! \Illuminate\Support\Facades\File::get(storage_path('app/settings.json')) !!}
 </script>

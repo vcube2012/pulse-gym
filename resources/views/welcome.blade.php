@@ -96,6 +96,8 @@
     <link href="{{asset('/static/css/main.185ae202.css')}}" rel="stylesheet">
 </head>
 <body>
+{{LaravelLocalization::getDefaultLocale()}}
+{{LaravelLocalization::getCurrentLocale()}}
 <noscript>You need to enable JavaScript to run this app.</noscript>
 <script>  window.setting =
         {

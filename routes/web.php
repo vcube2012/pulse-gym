@@ -17,7 +17,7 @@ Route::get('test', function () {
 //    app(\App\Service\TranslateService::class)->make();
    return Artisan::call('migrate --force');
 });
-Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localize']], function () {
+Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
     Route::any('/{view?}', function () {
         return view('welcome');
     })->where('view', '^(?!nova|nova-api|nova-vendor).*$');

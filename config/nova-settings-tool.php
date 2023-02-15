@@ -61,13 +61,18 @@ return [
         ],
 
         [
-            'key' => 'schedule',
-            'label' => 'Режим работы:',
+            'key' => 'schedule_ua',
+            'label' => 'Режим работы: (ua)',
             'panel' => 'Social',
             'language' => 'uk',
         ],
 
-
+        [
+            'key' => 'schedule_ru',
+            'label' => 'Режим работы: (ru)',
+            'panel' => 'Social',
+            'language' => 'ru',
+        ],
     ],
 
 ];

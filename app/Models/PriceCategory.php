@@ -38,11 +38,16 @@ class PriceCategory extends Model
     use HasFactory;
     use HasTranslations;
 
-    protected array $translatable=['name','comment'];
+    protected array $translatable = ['name', 'comment'];
 
     public function price(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(Price::class);
+    }
+
+    public function scopeOrder()
+    {
+        return $this->price()->orderBy('name','asc');
     }
 
     public function clubs()

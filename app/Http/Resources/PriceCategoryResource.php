@@ -21,7 +21,7 @@ class PriceCategoryResource extends JsonResource
             'new' => $this->new,
             'actia' => $this->actia,
             'comment' => $this->comment,
-            'price' => PriceResource::collection($this->price)
+            'price' => PriceResource::collection($this->order()->get())
         ];
     }
 }

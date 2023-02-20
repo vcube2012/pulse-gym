@@ -47,7 +47,7 @@ class PriceCategory extends Model
 
     public function scopeOrder()
     {
-        return $this->price()->orderBy('name','asc');
+        return $this->price()->orderBy('price','asc');
     }
 
     public function clubs()

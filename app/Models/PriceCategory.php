@@ -45,13 +45,18 @@ class PriceCategory extends Model
         return $this->hasMany(Price::class);
     }
 
-    public function scopeOrder()
+    public function baners()
     {
-        return $this->price()->orderBy('price','asc');
+        return $this->belongsToMany(Baner::class);
     }
 
     public function clubs()
     {
         $this->belongsToMany(Club::class);
+    }
+
+    public function scopeOrder()
+    {
+        return $this->price()->orderBy('price', 'asc');
     }
 }

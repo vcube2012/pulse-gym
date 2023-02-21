@@ -21,7 +21,8 @@ class PriceCategoryResource extends JsonResource
             'new' => $this->new,
             'actia' => $this->actia,
             'comment' => $this->comment,
-            'price' => PriceResource::collection($this->order()->get())
+            'price' => PriceResource::collection($this->order()->get()),
+            'baner'=>BanerResource::collection($this->whenLoaded('baners')),
         ];
     }
 }

@@ -4,9 +4,12 @@ namespace App\Nova;
 
 use App\Models\PriceCategory;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\MorphOne;
 use Laravel\Nova\Fields\Text;
+use NovaAttachMany\AttachMany;
 use Spatie\NovaTranslatable\Translatable;
 
 class PriceCategoryResource extends Resource
@@ -36,6 +39,9 @@ class PriceCategoryResource extends Resource
                 ->sortable()
                 ->rules('required'),
             HasMany::make('Prices', 'price', PriceResource::class),
+
+            AttachMany::make('baners','baners',BanerResource::class),
+           BelongsToMany::make('baners','baners',BanerResource::class)->display('type'),
         ];
     }
 

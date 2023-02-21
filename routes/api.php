@@ -1,8 +1,10 @@
 <?php
 
+use App\Models\Club;
 use App\Models\Promo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Str;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,7 +33,13 @@ Route::middleware("localization")->group(function () {
     Route::get('smartfit/{smartfit:slug}', [\App\Http\Controllers\SmartfitController::class, 'show']);
 });
 
-Route::get('test', function () {
-//    app(\App\Service\TranslateService::class)->make();
-    return \App\Http\Resources\BlogResource::collection(\App\Models\Coach::with('seo')->get());
+//Route::get('test', function () {
+////    app(\App\Service\TranslateService::class)->make();
+//    return \App\Http\Resources\BlogResource::collection(\App\Models\Coach::with('seo')->get());
+//});
+Route::get('parse', function () {
+    app(\App\Service\ParseFeedback::class)->make();
+
+return ;
+
 });

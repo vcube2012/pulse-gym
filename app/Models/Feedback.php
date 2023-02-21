@@ -38,7 +38,7 @@ class Feedback extends Model
 {
     use HasFactory;
     protected $with = ['club'];
-    protected $fillable = ['name', 'club_id', 'email', 'feedback', 'answer'];
+    protected $fillable = ['name', 'club_id', 'email', 'feedback', 'answer','created_at','active'];
 
     public function club(): BelongsTo
     {

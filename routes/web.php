@@ -22,3 +22,4 @@ Route::get('test', function () {
         return view('welcome');
     })->where('view', '^(?!nova|nova-api|nova-vendor).*$');
 //});
+

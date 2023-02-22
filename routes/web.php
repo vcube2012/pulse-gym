@@ -13,10 +13,10 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 | contains the "web" middleware group. Now create something great!
 |
 */
-//Route::get('test', function () {
-////    app(\App\Service\TranslateService::class)->make();
-//   return Artisan::call('db:seed --class=FeedbackTableSeeder --force');
-//});
+Route::get('test', function () {
+//    app(\App\Service\TranslateService::class)->make();
+   return Artisan::call('migrate --force');
+});
 //Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
     Route::any('/{view?}', function () {
         return view('welcome');

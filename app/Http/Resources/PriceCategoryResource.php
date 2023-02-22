@@ -16,6 +16,7 @@ class PriceCategoryResource extends JsonResource
     {
         return [
             'id' => $this->id,
+            'order'=>$this->order,
             'name' => $this->name,
             'color' => $this->color,
             'new' => $this->new,

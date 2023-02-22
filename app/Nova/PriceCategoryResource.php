@@ -8,6 +8,7 @@ use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\MorphOne;
+use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
 use NovaAttachMany\AttachMany;
 use Spatie\NovaTranslatable\Translatable;
@@ -26,6 +27,7 @@ class PriceCategoryResource extends Resource
     {
         return [
             ID::make()->sortable(),
+            Number::make('Order','order'),
             Translatable::make([
                 Text::make('Name')
                     ->sortable()

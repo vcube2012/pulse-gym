@@ -147,4 +147,8 @@ class Club extends Model implements HasMedia
         return $schedules->getSchedule($this->schedule);
     }
 
+    public function scopeOrder()
+    {
+        return $this->price()->orderBy('order','asc');
+    }
 }

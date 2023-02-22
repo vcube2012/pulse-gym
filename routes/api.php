@@ -33,9 +33,9 @@ Route::middleware("localization")->group(function () {
     Route::get('smartfit/{smartfit:slug}', [\App\Http\Controllers\SmartfitController::class, 'show']);
 });
 
-Route::get('test', function () {
-    return \App\Models\PriceCategory::find(1)->order();
-});
+//Route::get('test', function () {
+//    return \App\Models\PriceCategory::find(1)->order();
+//});
 //Route::get('parse', function () {
 //    app(\App\Service\ParseFeedback::class)->make();
 //

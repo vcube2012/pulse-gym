@@ -33,7 +33,9 @@ class ClubResource extends JsonResource
                 return $item['day'];
             }]),
             'services' => ServicesResource::collection($this->whenLoaded('services')),
-            'price' => PriceCategoryResource::collection($this->whenLoaded('price')),
+            'price' => PriceCategoryResource::collection($this->whenLoaded('price', function(){
+                return $this->order()->get();
+            })),
             'coaches' => CoachResource::collection($this->whenLoaded('coaches')),
             'seo' => SeoResource::make($this->whenLoaded('seo')),
 

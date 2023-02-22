@@ -60,7 +60,7 @@ class PriceCategory extends Model
     {
         $price=$this->price()->orderBy('price', 'asc')->get();
 
-        if(Str::contains($price->first()->name,['Единоразовый абонемент','Одноразовий абонемент']))
+        if(Str::contains($price->first()->name,['Единоразовый абонемент','Одноразовий абонемент','Разове тренування','Разовая тренировка']))
         {
             $singl=$price->first();
             $price->push($singl);

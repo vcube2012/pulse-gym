@@ -27,7 +27,8 @@ class PriceCategoryResource extends Resource
     {
         return [
             ID::make()->sortable(),
-            Number::make('Order','order'),
+            Number::make('Order','order')
+                ->sortable(),
             Translatable::make([
                 Text::make('Name')
                     ->sortable()

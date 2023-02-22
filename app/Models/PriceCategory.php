@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 use Spatie\Translatable\HasTranslations;
 
 /**
@@ -57,6 +58,15 @@ class PriceCategory extends Model
 
     public function scopeOrder()
     {
-        return $this->price()->orderBy('price', 'asc');
+        $price=$this->price()->orderBy('price', 'asc')->get();
+
+        if(Str::contains($price->first()->name,['Единоразовый абонемент','Одноразовий абонемент']))
+        {
+            $singl=$price->first();
+            $price->push($singl);
+            $price->forget(0);
+        }
+
+        return $price;
     }
 }

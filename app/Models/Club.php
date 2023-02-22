@@ -151,4 +151,9 @@ class Club extends Model implements HasMedia
     {
         return $this->price()->orderBy('order','asc');
     }
+
+    public function scopeOrderMedia()
+    {
+        return $this->media()->orderBy('file_name','asc');
+    }
 }

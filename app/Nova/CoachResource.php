@@ -20,7 +20,7 @@ class CoachResource extends Resource
 
     public static function label()
     {
-        return 'Тренеры';
+        return 'Тренери';
     }
 
     public static $model = Coach::class;

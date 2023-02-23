@@ -24,6 +24,11 @@ class TagResource extends Resource
         'id', 'slug', 'name'
     ];
 
+    public static function label()
+    {
+        return 'Теги';
+    }
+
     public function fields(Request $request): array
     {
         return [

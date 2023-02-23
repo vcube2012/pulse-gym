@@ -21,13 +21,14 @@ class ScheduleServiceResource extends Resource
     public static $search = [
         ''
     ];
+    public static $displayInNavigation = false;
 
     public function fields(Request $request): array
     {
         return [
             ID::make()->sortable(),
             Text::make('from'),
-            Select::make('day')->options(function (){
+            Select::make('day')->options(function () {
                 return [
                     'Понедельник',
                     'Вторник',
@@ -38,9 +39,9 @@ class ScheduleServiceResource extends Resource
                 ];
             }),
 
-            BelongsTo::make('schedule' , 'schedule' , ScheduleResource::class),
-            BelongsTo::make('service' , 'service' , ServiceResource::class),
-            Boolean::make('recruiting','recruiting')->default(true),
+            BelongsTo::make('schedule', 'schedule', ScheduleResource::class),
+            BelongsTo::make('service', 'service', ServiceResource::class),
+            Boolean::make('recruiting', 'recruiting')->default(true),
         ];
     }
 

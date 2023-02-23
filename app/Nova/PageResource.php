@@ -20,15 +20,18 @@ class PageResource extends Resource
     public static $search = [
         ''
     ];
-
+    public static function label()
+    {
+        return 'Інформаційні сторінки';
+    }
     public function fields(Request $request): array
     {
         return [
             ID::make()->sortable(),
             Translatable::make([
-                Text::make('name'),
-                Trix::make('text'),
-                Textarea::make('text'),
+                Text::make('Назва','name'),
+                Trix::make('Текст','text'),
+                Textarea::make('Редактувати HTML','text'),
             ]),
             Slug::make('slug')->nullable(),
         ];

@@ -22,7 +22,10 @@ class PriceCategoryResource extends Resource
     public static $search = [
         'id', 'name', 'color'
     ];
-
+    public static function label()
+    {
+        return 'Цінові категорії';
+    }
     public function fields(Request $request): array
     {
         return [

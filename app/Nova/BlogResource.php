@@ -23,7 +23,10 @@ class BlogResource extends Resource
     public static $search = [
         'id', 'slug', 'title', 'image', 'description'
     ];
-
+    public static function label()
+    {
+        return 'Пости';
+    }
     public function fields(Request $request): array
     {
         return [

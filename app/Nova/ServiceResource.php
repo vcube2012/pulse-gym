@@ -17,6 +17,10 @@ class ServiceResource extends Resource
     public static $search = [
         'id', 'name'
     ];
+public static function label()
+{
+    return 'Послуги';
+}
 
     public function fields(Request $request): array
     {

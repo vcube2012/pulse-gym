@@ -12,7 +12,7 @@ class SpecializationResource extends Resource
 {
     public static function label()
     {
-        return "Специализация";
+        return "Спеціалізація";
     }
 
     public static $model = Specialization::class;

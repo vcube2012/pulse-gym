@@ -21,7 +21,10 @@ class FeedbackResource extends Resource
     public static $search = [
         'id', 'name', 'email', 'feedback'
     ];
-
+    public static function label()
+    {
+        return 'Відгуки';
+    }
     public function fields(Request $request): array
     {
         return [

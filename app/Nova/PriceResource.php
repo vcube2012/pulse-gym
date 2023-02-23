@@ -14,6 +14,7 @@ class PriceResource extends Resource
     public static $model = Price::class;
 
     public static $title = 'name';
+    public static $displayInNavigation = false;
 
     public static $search = [
         'id', 'name', 'price'

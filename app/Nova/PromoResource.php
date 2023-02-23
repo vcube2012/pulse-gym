@@ -36,6 +36,10 @@ class PromoResource extends Resource
         'id',
     ];
 
+    public static function label()
+    {
+        return 'Інформація з головної сторінки';
+    }
     /**
      * Get the fields displayed by the resource.
      *

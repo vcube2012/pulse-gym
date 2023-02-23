@@ -34,7 +34,10 @@ class BanerResource extends Resource
     public static $search = [
         'id',
     ];
-
+    public static function label()
+    {
+        return 'Банери';
+    }
     /**
      * Get the fields displayed by the resource.
      *
@@ -46,15 +49,15 @@ class BanerResource extends Resource
         return [
             ID::make()->sortable(),
 
-            Select::make('Type','type')->options(function (){
+            Select::make('Тип банера','type')->options(function (){
                 return [
                     'freeze' => 'Заморозка абонемента',
-                    'two-free-training' => 'Два бесплатных занятия с тренером',
+                    'two-free-training' => 'Два безплатних заняття с тренером',
                 ];
             }),
             Translatable::make([
-                Text::make('Title','title'),
-                Text::make('Sub Title','sub_title'),
+                Text::make('Заголовок','title'),
+                Text::make('Під-заголовок','sub_title'),
             ]),
         ];
     }

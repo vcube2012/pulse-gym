@@ -24,7 +24,10 @@ class ClubResource extends Resource
     public static $search = [
         'id', 'name', 'address'
     ];
-
+    public static function label()
+    {
+        return 'Клуби';
+    }
     public function fields(Request $request): array
     {
         return [

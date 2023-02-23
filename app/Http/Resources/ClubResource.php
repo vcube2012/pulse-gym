@@ -32,6 +32,9 @@ class ClubResource extends JsonResource
             'schedule' => ScheduleResource::collection($this?->week())->collection->sortBy(function ($item){return $item['from'];})->groupBy(['name', function ($item) {
                 return $item['day'];
             }]),
+            'schedule_recruiting' =>ScheduleResource::collection($this?->weekRecruiting())->collection->sortBy(function ($item){return $item['from'];})->groupBy(['name', function ($item) {
+                return $item['day'];
+            }]),
             'services' => ServicesResource::collection($this->whenLoaded('services')),
             'price' => PriceCategoryResource::collection($this->whenLoaded('price', function(){
                 return $this->order()->get()->load('baners');

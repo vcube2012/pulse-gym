@@ -140,13 +140,16 @@ class Club extends Model implements HasMedia
         }
     }
 
+    public function scopeWeekRecruiting()
+    {
+        $schedules = new WeekScheduleService();
+        return $schedules->getSchedule($this->schedule->where('recruiting',true));
+    }
     public function scopeWeek()
     {
-
         $schedules = new WeekScheduleService();
-        return $schedules->getSchedule($this->schedule);
+        return $schedules->getSchedule($this->schedule->where('recruiting',false));
     }
-
     public function scopeOrder()
     {
         return $this->price()->orderBy('order','asc');

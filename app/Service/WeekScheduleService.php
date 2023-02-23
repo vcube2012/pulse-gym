@@ -99,6 +99,6 @@ class WeekScheduleService
                 $schedules_new[]=$day;
             }
         }
-        return $schedules_new;
+        return collect($schedules_new);
     }
 }

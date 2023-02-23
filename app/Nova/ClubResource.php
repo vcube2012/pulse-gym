@@ -6,6 +6,8 @@ use App\Models\Club;
 use Ebess\AdvancedNovaMediaLibrary\Fields\Images;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsToMany;
+use Laravel\Nova\Fields\Boolean;
+use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Image;
@@ -44,6 +46,9 @@ class ClubResource extends Resource
                     ->sortable()
                     ->rules('required'),
             ]),
+            Boolean::make('New','new'),
+            Boolean::make('Тимчасово не працює','no_working'),
+
             Image::make('image','image'),
 
             Text::make('Lat')
@@ -57,6 +62,7 @@ class ClubResource extends Resource
             Flexible::make('phone')->addLayout('Номер телефона', 'phone', [
                 Text::make('phone'),
             ]),
+            Date::make('Дата створення','created_at'),
             HasMany::make('feedback' , 'feedback' , FeedbackResource::class),
 
             AttachMany::make('price_category', 'price' , PriceCategoryResource::class),

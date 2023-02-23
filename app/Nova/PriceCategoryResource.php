@@ -5,6 +5,7 @@ namespace App\Nova;
 use App\Models\PriceCategory;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsToMany;
+use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\MorphOne;
@@ -30,8 +31,9 @@ class PriceCategoryResource extends Resource
     {
         return [
             ID::make()->sortable(),
-            Number::make('Order','order')
+            Number::make('Послідовність','order')
                 ->sortable(),
+            Boolean::make('Акція','actia'),
             Translatable::make([
                 Text::make('Name')
                     ->sortable()

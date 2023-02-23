@@ -48,8 +48,8 @@ class BanerResource extends Resource
 
             Select::make('Type','type')->options(function (){
                 return [
-                    'zamorozka' => 'Заморозка абонемента',
-                    'two-free-trening' => 'Два бесплатных занятия с тренером',
+                    'freeze' => 'Заморозка абонемента',
+                    'two-free-training' => 'Два бесплатных занятия с тренером',
                 ];
             }),
             Translatable::make([

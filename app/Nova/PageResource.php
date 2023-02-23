@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Fields\Trix;
 use Spatie\NovaTranslatable\Translatable;
 
@@ -27,6 +28,7 @@ class PageResource extends Resource
             Translatable::make([
                 Text::make('name'),
                 Trix::make('text'),
+                Textarea::make('text'),
             ]),
             Slug::make('slug')->nullable(),
         ];

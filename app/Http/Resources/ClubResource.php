@@ -30,12 +30,14 @@ class ClubResource extends JsonResource
             'phone' => $this->getPhone(),
             'media' => Media::collection($this->loadMedia('my_multi_collection')),
             'scheduler' => $this->scheduler,
-            'schedule' => ScheduleResource::collection($this?->week()->merge($this?->weekRecruiting()))->collection->sortBy(function ($item){return $item['from'];})->groupBy(['name', function ($item) {
+            'schedule' => [
+                ...ScheduleResource::collection($this?->week()->merge($this?->weekRecruiting()))->collection->sortBy(function ($item){return $item['from'];})->groupBy(['name', function ($item) {
                 return $item['day'];
             }]),
-            'schedule_recruiting' =>ScheduleResource::collection($this?->weekRecruiting())->collection->sortBy(function ($item){return $item['from'];})->groupBy(['name', function ($item) {
+                ...ScheduleResource::collection($this?->weekRecruiting())->collection->sortBy(function ($item){return $item['from'];})->groupBy(['name', function ($item) {
                 return $item['day'];
-            }]),
+            }])
+            ],
             'services' => ServicesResource::collection($this->whenLoaded('services')),
             'price' => PriceCategoryResource::collection($this->whenLoaded('price', function(){
                 return $this->order()->get()->load('baners');

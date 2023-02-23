@@ -92,7 +92,7 @@
                 opacity: .2
             }
         }</style>
-    <script defer="defer" src="{{asset('/static/js/main.b4c0df34.js')}}"></script>
+    <script defer="defer" src="{{asset('/static/js/main.b65b2d12.js')}}"></script>
     <link href="{{asset('/static/css/main.356fabda.css')}}" rel="stylesheet">
 </head>
 <body>

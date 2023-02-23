@@ -23,21 +23,19 @@ class ClubResource extends JsonResource
             'name' => $this->name,
             'image' =>$this->imageUrl,
             'new' => $this->new,
-            'no_working'=>$this->no_working,
             'address' => $this->address,
             'lat' => $this->lat,
             'lng' => $this->lng,
             'phone' => $this->getPhone(),
-            'media' => Media::collection($this->loadMedia('my_multi_collection')),
+            'media' => Media::collection($this->loadMedia('my_multi_collection')->sortBy('name',SORT_NATURAL)),
             'scheduler' => $this->scheduler,
-            'schedule' => [
-                ...ScheduleResource::collection($this?->week()->merge($this?->weekRecruiting()))->collection->sortBy(function ($item){return $item['from'];})->groupBy(['name', function ($item) {
+            'schedule' => ScheduleResource::collection($this?->week())->collection->sortBy(function ($item){return $item['from'];})->groupBy(['name', function ($item) {
                 return $item['day'];
             }]),
-                ...ScheduleResource::collection($this?->weekRecruiting())->collection->sortBy(function ($item){return $item['from'];})->groupBy(['name', function ($item) {
+//            'schedule' => ScheduleResource::collection($this->week()),
+            'schedule_recruiting' =>ScheduleResource::collection($this?->weekRecruiting())->collection->sortBy(function ($item){return $item['from'];})->groupBy(['name', function ($item) {
                 return $item['day'];
-            }])
-            ],
+            }]),
             'services' => ServicesResource::collection($this->whenLoaded('services')),
             'price' => PriceCategoryResource::collection($this->whenLoaded('price', function(){
                 return $this->order()->get()->load('baners');

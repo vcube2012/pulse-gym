@@ -92,8 +92,8 @@
                 opacity: .2
             }
         }</style>
-    <script defer="defer" src="{{asset('/static/js/main.583c002c.js')}}"></script>
-    <link href="{{asset('/static/css/main.185ae202.css')}}" rel="stylesheet">
+    <script defer="defer" src="{{asset('/static/js/main.b4c0df34.js')}}"></script>
+    <link href="{{asset('/static/css/main.356fabda.css')}}" rel="stylesheet">
 </head>
 <body>
 <noscript>You need to enable JavaScript to run this app.</noscript>

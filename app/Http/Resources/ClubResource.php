@@ -30,7 +30,7 @@ class ClubResource extends JsonResource
             'phone' => $this->getPhone(),
             'media' => Media::collection($this->loadMedia('my_multi_collection')),
             'scheduler' => $this->scheduler,
-            'schedule' => ScheduleResource::collection($this?->week())->collection->sortBy(function ($item){return $item['from'];})->groupBy(['name', function ($item) {
+            'schedule' => ScheduleResource::collection($this?->week()->merge($this?->weekRecruiting()))->collection->sortBy(function ($item){return $item['from'];})->groupBy(['name', function ($item) {
                 return $item['day'];
             }]),
             'schedule_recruiting' =>ScheduleResource::collection($this?->weekRecruiting())->collection->sortBy(function ($item){return $item['from'];})->groupBy(['name', function ($item) {

@@ -53,6 +53,7 @@ class BanerResource extends Resource
                 return [
                     'freeze' => 'Заморозка абонемента',
                     'two-free-training' => 'Два безплатних заняття с тренером',
+                    'personal-coach'=>'Personal Coach',
                 ];
             }),
             Translatable::make([

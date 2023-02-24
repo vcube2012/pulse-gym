@@ -4,7 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class BanerResource extends JsonResource
+class PoligonResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -15,10 +15,8 @@ class BanerResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'type'=>$this->type,
-            'slug'=>$this->slug,
-            'title'=>$this->title,
-            'sub_title'=>$this->sub_title,
+            'lat'=>$this->lat,
+            'lng'=>$this->lng,
         ];
     }
 }

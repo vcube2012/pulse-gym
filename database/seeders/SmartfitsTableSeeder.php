@@ -14,12 +14,12 @@ class SmartfitsTableSeeder extends Seeder
      */
     public function run()
     {
-        
+
 
         \DB::table('smartfits')->delete();
-        
+
         \DB::table('smartfits')->insert(array (
-            0 => 
+            0 =>
             array (
                 'id' => 331,
                 'slug' => 'smart-fit',
@@ -40,7 +40,7 @@ class SmartfitsTableSeeder extends Seeder
                 'updated_at' => '2023-02-04 11:13:36',
             ),
         ));
-        
-        
+
+
     }
 }

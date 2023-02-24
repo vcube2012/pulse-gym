@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Resources\MissingValue;
 use Illuminate\Support\Str;
 use Spatie\Translatable\HasTranslations;
 
@@ -58,15 +59,19 @@ class PriceCategory extends Model
 
     public function scopeOrder()
     {
-        $price=$this->price()->orderBy('price', 'asc')->get();
+        if($this->price()->get()->count()!=0) {
+            $price = $this->price()->orderBy('price', 'asc')->get();
 
-        if(Str::contains($price->first()->name,['Единоразовый абонемент','Одноразовий абонемент','Разове тренування','Разовая тренировка']))
-        {
-            $singl=$price->first();
-            $price->push($singl);
-            $price->forget(0);
+            if (Str::contains($price->first()->name, ['Единоразовый абонемент', 'Одноразовий абонемент', 'Разове тренування', 'Разовая тренировка'])) {
+                $singl = $price->first();
+                $price->push($singl);
+                $price->forget(0);
+            }
+
+            return $price;
         }
-
-        return $price;
+        else{
+            return new MissingValue ;
+        }
     }
 }

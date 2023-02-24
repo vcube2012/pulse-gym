@@ -59,5 +59,6 @@ class DatabaseSeeder extends Seeder
         $this->call(PagesTableSeeder::class);
         $this->call(SmartfitsTableSeeder::class);
         $this->call(CoachSmartfitTableSeeder::class);
+        $this->call(PoligonTableSeeder::class);
     }
 }

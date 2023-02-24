@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Models\Poligon;
 use Ebess\AdvancedNovaMediaLibrary\Http\Resources\MediaResource;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
@@ -42,7 +43,7 @@ class ClubResource extends JsonResource
             })),
             'coaches' => CoachResource::collection($this->whenLoaded('coaches')),
             'seo' => SeoResource::make($this->whenLoaded('seo')),
-
+            'polygon'=>PoligonResource::collection(Poligon::all()),
         ];
     }
 }

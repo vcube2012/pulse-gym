@@ -32,7 +32,6 @@ Route::middleware("localization")->group(function () {
     Route::get('promo', [\App\Http\Controllers\PromoController::class, 'index']);
     Route::get('smartfit/{smartfit:slug}', [\App\Http\Controllers\SmartfitController::class, 'show']);
 
-    Route::get('polygon',[\App\Http\Controllers\PoligonController::class,'index']);
 });
 
 //Route::get('test', function () {

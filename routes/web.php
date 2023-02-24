@@ -15,11 +15,12 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 */
 Route::get('test', function () {
 //    app(\App\Service\TranslateService::class)->make();
-   return Artisan::call('migrate --force');
+//   return Artisan::call('migrate --force');
+    return Artisan::call('db:seed --class=PoligonTableSeeder --force');
 });
+
 //Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
     Route::any('/{view?}', function () {
         return view('welcome');
     })->where('view', '^(?!nova|nova-api|nova-vendor).*$');
 //});
-

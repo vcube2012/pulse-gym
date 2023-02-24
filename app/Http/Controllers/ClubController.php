@@ -18,11 +18,10 @@ class ClubController extends Controller
      */
     public function index()
     {
-        return  ['date'=>[
+        return  [
            'clubs'=> ClubResource::collection(Club::with(['services'])->paginate(25)),
             'polygon'=>PoligonResource::collection(Poligon::all()),
-
-        ]];
+        ];
     }
 
     /**

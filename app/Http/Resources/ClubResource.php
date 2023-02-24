@@ -43,7 +43,6 @@ class ClubResource extends JsonResource
             })),
             'coaches' => CoachResource::collection($this->whenLoaded('coaches')),
             'seo' => SeoResource::make($this->whenLoaded('seo')),
-            'polygon'=>PoligonResource::collection(Poligon::all()),
         ];
     }
 }

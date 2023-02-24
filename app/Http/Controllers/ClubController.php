@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreClubRequest;
 use App\Http\Requests\UpdateClubRequest;
 use App\Http\Resources\ClubResource;
+use App\Http\Resources\PoligonResource;
 use App\Models\Club;
+use App\Models\Poligon;
 
 class ClubController extends Controller
 {
@@ -16,7 +18,11 @@ class ClubController extends Controller
      */
     public function index()
     {
-        return ClubResource::collection(Club::with(['services'])->paginate(25));
+        return  ['date'=>[
+           'clubs'=> ClubResource::collection(Club::with(['services'])->paginate(25)),
+            'polygon'=>PoligonResource::collection(Poligon::all()),
+
+        ]];
     }
 
     /**

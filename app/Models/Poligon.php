@@ -9,6 +9,11 @@ class Poligon extends Model
 {
     use HasFactory;
 
+    protected $casts = [
+        'lat' => 'float',
+        'lng' => 'float'
+    ];
+
     protected $table = 'poligon';
 
     protected $fillable = ['lat', 'lng'];

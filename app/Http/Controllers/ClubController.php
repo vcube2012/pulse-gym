@@ -14,12 +14,12 @@ class ClubController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
+     * @return array
      */
     public function index()
     {
         return  [
-           'clubs'=> ClubResource::collection(Club::with(['services'])->paginate(25)),
+            'clubs'=> ClubResource::collection(Club::with(['services'])->paginate(25)),
             'polygon'=>PoligonResource::collection(Poligon::all()),
         ];
     }

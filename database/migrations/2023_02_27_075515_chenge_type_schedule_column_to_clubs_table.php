@@ -14,10 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::table('clubs', function (Blueprint $table) {
-            $table->dropIfExists('scheduler');
+            $table->dropColumn('scheduler');
         });
         Schema::table('clubs', function (Blueprint $table) {
-            $table->text('scheduler');
+            $table->text('scheduler')->nullable();
         });
 
     }
@@ -30,10 +30,10 @@ return new class extends Migration
     public function down()
     {
         Schema::table('clubs', function (Blueprint $table) {
-            $table->dropIfExists('scheduler');
+            $table->dropColumn('scheduler');
         });
         Schema::table('clubs', function (Blueprint $table) {
-            $table->string('scheduler');
+            $table->string('scheduler')->nullable();
         });
     }
 };

@@ -60,7 +60,6 @@ class ClubResource extends Resource
                 ->rules('nullable'),
             Translatable::make([
                 Text::make('scheduler')->nullable(),
-
             ]),
             Flexible::make('phone')->addLayout('Номер телефона', 'phone', [
                 Text::make('phone'),

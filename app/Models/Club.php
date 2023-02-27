@@ -108,6 +108,10 @@ class Club extends Model implements HasMedia
         return $this->belongsToMany(PriceCategory::class);
     }
 
+    public function baners()
+    {
+        return $this->HasMany(Baner::class);
+    }
 
     public function registerMediaConversions(Media $media = null): void
     {
@@ -159,4 +163,5 @@ class Club extends Model implements HasMedia
     {
         return $this->media()->orderBy('file_name','asc');
     }
+
 }

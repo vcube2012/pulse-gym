@@ -57,35 +57,5 @@ class PriceCategory extends Model
         $this->belongsToMany(Club::class);
     }
 
-    public function scopeOrder()
-    {
-        $price = $this->price()->orderBy('price', 'asc')->get();
-        if($price->isNotEmpty()) {
-            if (in_array($price->first()->name, ['Единоразовый абонемент', 'Одноразовий абонемент', 'Разове тренування', 'Разовая тренировка'])) {
-                $singl = $price->first();
-                $price->push($singl);
-                $price->forget(0);
-                $price->values();
-            }
-            if($price->count()>2) {
-                if (in_array($price[1]->name, ['Единоразовый абонемент', 'Одноразовий абонемент', 'Разове тренування', 'Разовая тренировка'])) {
-                    $singl = $price[1];
-                    $price->push($singl);
-                    $price->forget(1);
-//                    dd($price);
 
-                }
-            }
-            if (in_array($price->first()->name, ['Призупинення абонементу (2 тижні)', 'Приостановка абонемента (2 недели)'])) {
-                $singl = $price->first();
-                $price->push($singl);
-                $price->forget(0);
-                $price->values();
-            }
-            return $price;
-        }
-        else{
-            return new MissingValue ;
-        }
-    }
 }

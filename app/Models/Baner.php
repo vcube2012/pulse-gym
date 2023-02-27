@@ -15,4 +15,9 @@ class Baner extends Model
     {
         return $this->hasMany(PriceCategory::class);
     }
+    public function clubs()
+    {
+        return $this->belongsToMany(Club::class);
+    }
+
 }

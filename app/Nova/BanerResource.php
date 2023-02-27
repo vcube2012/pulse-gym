@@ -3,12 +3,16 @@
 namespace App\Nova;
 
 use App\Models\Baner;
+use App\Models\Club;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\BelongsToMany;
+use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use NovaAttachMany\AttachMany;
 use Spatie\NovaTranslatable\Translatable;
 
 class BanerResource extends Resource
@@ -62,6 +66,8 @@ class BanerResource extends Resource
                 Text::make('Заголовок','title'),
                 Text::make('Під-заголовок','sub_title'),
             ]),
+            AttachMany::make('clubs','clubs', ClubResource::class),
+            BelongsToMany::make('clubs','clubs',ClubResource::class)->display('name'),
         ];
     }
 

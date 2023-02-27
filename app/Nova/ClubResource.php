@@ -58,7 +58,10 @@ class ClubResource extends Resource
             Text::make('Lng')
                 ->sortable()
                 ->rules('nullable'),
-            Text::make('scheduler')->nullable(),
+            Translatable::make([
+                Text::make('scheduler')->nullable(),
+
+            ]),
             Flexible::make('phone')->addLayout('Номер телефона', 'phone', [
                 Text::make('phone'),
             ]),

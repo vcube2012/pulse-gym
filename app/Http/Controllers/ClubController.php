@@ -19,7 +19,7 @@ class ClubController extends Controller
     public function index()
     {
         return  [
-            'clubs'=> ClubResource::collection(Club::with(['services'])->all()),
+            'clubs'=> ClubResource::collection(Club::with(['services'])->get()),
             'polygon'=>PoligonResource::collection(Poligon::all()),
         ];
     }

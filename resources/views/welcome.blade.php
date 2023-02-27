@@ -18,7 +18,7 @@
     <link rel="apple-touch-icon" sizes="152x152" href="{{asset('/favicon/apple-icon-152x152.png')}}">
     <link rel="apple-touch-icon" sizes="180x180" href="{{asset('/favicon/apple-icon-180x180.png')}}">
     <meta property="og:type" content="website">
-    <meta name="og:title" content="{{__('translation.meta_title')}}">
+    <meta name="og:title" content="{{__('translation.meta-title')}}">
     <meta name="og:description" content="{{__('translation.meta_description')}}">
     <meta name="description" content="{{__('translation.meta_description')}}">
     <meta name="msapplication-TileColor" content="#ffffff">

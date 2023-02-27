@@ -70,8 +70,8 @@ class ClubResource extends Resource
             AttachMany::make('price_category', 'price' , PriceCategoryResource::class),
             BelongsToMany::make('price_category', 'price' , PriceCategoryResource::class),
 
-            AttachMany::make('coaches', 'coaches' , CoachResource::class)->display('name'),
-            BelongsToMany::make('coaches', 'coaches' , CoachResource::class),
+            AttachMany::make('coaches', 'coaches' , CoachResource::class),
+            BelongsToMany::make('coaches', 'coaches' , CoachResource::class)->display('name'),
 
             AttachMany::make('services', 'services' , ServiceResource::class)->display('name'),
             BelongsToMany::make('services', 'services' , ServiceResource::class),

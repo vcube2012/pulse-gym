@@ -53,7 +53,7 @@ class BanerResource extends Resource
     {
         return [
             ID::make()->sortable(),
-
+            Text::make('Назва','name'),
             Select::make('Тип банера','type')->options(function (){
                 return [
                     'freeze' => 'Заморозка абонемента',

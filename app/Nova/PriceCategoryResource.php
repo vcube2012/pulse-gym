@@ -31,7 +31,7 @@ class PriceCategoryResource extends Resource
     {
         return [
             ID::make()->sortable(),
-            Number::make('Послідовність','order')
+            Number::make('Послідовність','order')->step(0.01)
                 ->sortable(),
             Boolean::make('Акція','actia'),
             Translatable::make([

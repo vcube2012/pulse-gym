@@ -49,7 +49,7 @@ class PriceCategoryResource extends Resource
             HasMany::make('Prices', 'price', PriceResource::class),
 
             AttachMany::make('baners','baners',BanerResource::class),
-           BelongsToMany::make('baners','baners',BanerResource::class)->display('type'),
+           BelongsToMany::make('baners','baners',BanerResource::class)->display('name'),
         ];
     }
 

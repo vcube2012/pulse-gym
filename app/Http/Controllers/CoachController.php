@@ -42,10 +42,10 @@ class CoachController extends Controller
     }
 
 
-    public function show(Club $club , Coach $coach)
+    public function show(Club $club , $coach)
     {
-
-        return (new CoachResource($coach->load(['specialization','seo'])));
+        $coachh=Coach::where('slug',$coach)->first();
+        return (new CoachResource($coachh->load(['specialization','seo'])));
     }
 
     /**

@@ -26,7 +26,7 @@ Route::middleware("localization")->group(function () {
     Route::get('clubs', [\App\Http\Controllers\ClubController::class, 'index']);
 
     Route::get('clubs/{club:slug}', [\App\Http\Controllers\ClubController::class, 'show']);
-    Route::get('clubs/{club:slug}/coach/{coach:slug}', [\App\Http\Controllers\CoachController::class, 'show']);
+    Route::get('clubs/{club:slug}/coach/{slug}', [\App\Http\Controllers\CoachController::class, 'show']);
     Route::get('page/{page:slug}', [\App\Http\Controllers\PageController::class, 'show']);
 
     Route::get('promo', [\App\Http\Controllers\PromoController::class, 'index']);

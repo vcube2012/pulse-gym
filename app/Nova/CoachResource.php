@@ -6,6 +6,7 @@ use App\Models\Coach;
 use App\Models\Specialization;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsToMany;
+use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\MorphOne;
@@ -62,11 +63,12 @@ class CoachResource extends Resource
                     return [
                         'instagram' => 'instagram',
                         'facebook' => 'facebook',
-                        'vk' => 'vk',
+                        'telegram' => 'telegram',
                     ];
                 }),
                 Text::make('url'),
             ]),
+            Boolean::make('Personal Coach','is_personal_coach'),
             AttachMany::make('specialization', 'specialization' , SpecializationResource::class),
             BelongsToMany::make('specialization', 'specialization' , SpecializationResource::class),
             MorphOne::make('MetaData','seo',SeoResource::class),

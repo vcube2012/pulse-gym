@@ -16,6 +16,7 @@ class CoachResource extends JsonResource
     {
         return [
             'id' => $this->id,
+            'is_personal_coach'=>$this->is_personal_coach,
             'name' => $this->name,
             'slug' => $this->slug,
             'title' => $this->title,

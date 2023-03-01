@@ -26,6 +26,7 @@ class ClubResource extends JsonResource
             'new' => $this->new,
             'not_working'=>$this->no_working,
             'address' => $this->address,
+            'created_at'=>$this->created_at,
             'lat' => $this->lat,
             'lng' => $this->lng,
             'phone' => $this->getPhone(),

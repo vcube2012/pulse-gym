@@ -59,7 +59,7 @@
   "free_consultation_of_a_rehabilitation_specialist_as_a_gift": "бесплатная консультация реабилитолога в подарок",
   "choose_a_club_2": "выбрать клуб",
   "join_and_you": "Присоединяйся и ты!",
-  "photo_gallery": "фотогаллерея",
+  "photo_gallery": "фотогаллерею",
   "answer_from_pulse_gym_administration": "Ответ от Администрации Pulse Gym",
   "pulse_gym_network_of_sports_clubs_in_Kharkov": " Pulse GYM Сеть спортивных клубов в харькове",
   "specialization": "Специализация:",
@@ -105,5 +105,8 @@
   "rules_of_visiting_a_sports_club": "Правила посещения спортивного клуба, техника безопасности - PULSE GYM",
   "safety_equipment_pulse_gym": "Правила посещения спортивного клуба, техника безопасности Правила обязательны для всех посетителей спортивного клуба.",
   "smart_fit_on_Saltovka_pulse_gym": "Smart Fit на Салтовке - PULSE GYM - Мережа спортивних клубів у Харкові | Тренажерний зал, фітнес клуб",
-  "smart_fit_on_Saltovka_network_of_gyms": "Smart Fit на Салтовке Мережа тренажерних залів PULSE GYM запрошує Вас відвідати наші зали. Вас зустрінуть: професійне силове та кардіо обладнання, кваліфіковані тренери, привітний персонал, низькі ціни."
+  "smart_fit_on_Saltovka_network_of_gyms": "Smart Fit на Салтовке Мережа тренажерних залів PULSE GYM запрошує Вас відвідати наші зали. Вас зустрінуть: професійне силове та кардіо обладнання, кваліфіковані тренери, привітний персонал, низькі ціни.",
+  "location_of_clubs": "расположение клубов",
+  "not_working": "временно не работает",
+  "opening_soon": "скоро открытие"
 }

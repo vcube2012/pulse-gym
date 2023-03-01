@@ -36,6 +36,7 @@ class CoachResource extends Resource
     {
         return [
             ID::make()->sortable(),
+            Text::make('slug'),
             Translatable::make([
                 Text::make('Name')
                     ->sortable()

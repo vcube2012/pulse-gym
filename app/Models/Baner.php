@@ -10,7 +10,7 @@ class Baner extends Model
 {
     use HasFactory;
     use HasTranslations;
-    protected array $translatable = ['title', 'sub_title'];
+    protected array $translatable = ['title', 'sub_title','mobile_title', 'mobile_sub_title'];
     public function priceCategory()
     {
         return $this->hasMany(PriceCategory::class);

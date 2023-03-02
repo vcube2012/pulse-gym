@@ -19,6 +19,8 @@ class BanerResource extends JsonResource
             'slug'=>$this->slug,
             'title'=>$this->title,
             'sub_title'=>$this->sub_title,
+            'mobile_title'=>$this->mobile_title,
+            'mobile_sub_title'=>$this->mobile_sub_title,
         ];
     }
 }

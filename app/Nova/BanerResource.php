@@ -65,6 +65,8 @@ class BanerResource extends Resource
             Translatable::make([
                 Text::make('Заголовок','title'),
                 Text::make('Під-заголовок','sub_title'),
+                Text::make('Заголовок для моб','mobile_title'),
+                Text::make('Під-заголовок для моб','mobile_sub_title'),
             ]),
             AttachMany::make('clubs','clubs', ClubResource::class),
             BelongsToMany::make('clubs','clubs',ClubResource::class)->display('name'),

@@ -14,8 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::table('baners', function (Blueprint $table) {
-           $table->text('mobile_title');
-            $table->text('mobile_sub_title');
+           $table->text('mobile_title')->nullable();
+            $table->text('mobile_sub_title')->nullable();
         });
     }
 

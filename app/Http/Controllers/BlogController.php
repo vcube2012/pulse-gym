@@ -20,7 +20,7 @@ class BlogController extends Controller
             $query->whereRelation('tags', 'slug', request()->get('tag'));
         });
         if (request()->get('tag') != null) {
-            return BlogResource::collection($blogs->paginate(2));
+            return BlogResource::collection($blogs->paginate(6));
         } else {
             return BlogResource::collection($blogs->paginate(9));
         }

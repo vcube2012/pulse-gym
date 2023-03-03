@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 use Psy\Readline\Hoa\Console;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
@@ -137,8 +138,16 @@ class Club extends Model implements HasMedia
 
     public function getPhone()
     {
+
         try {
-            return Arr::pluck($this->phone, 'attributes.phone');
+            $phone = Arr::pluck($this->phone, 'attributes.phone');
+            $phone = Arr::map($phone,function($value, $key){
+                return '+38'.Str::replace('-','',$value);
+            });
+            $phone = Arr::map($phone,function($value, $key){
+                return substr($value,0,3).' '.substr($value,3,3).' '.substr($value,6,3).' '.substr($value,9,4);
+            });
+            return $phone;
         } catch (\Throwable $exception) {
             return [];
         }

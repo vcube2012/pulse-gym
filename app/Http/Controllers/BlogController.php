@@ -18,7 +18,7 @@ class BlogController extends Controller
     {
         return BlogResource::collection(Blog::query()->with('tags')->when(request()->get('tag') , function ($query){
             $query->whereRelation('tags' , 'slug' , request()->get('tag'));
-        })->paginate());
+        })->paginate(9));
     }
 
     /**

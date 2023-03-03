@@ -59,7 +59,7 @@
   "free_consultation_of_a_rehabilitation_specialist_as_a_gift": "бесплатная консультация реабилитолога в подарок",
   "choose_a_club_2": "выбрать клуб",
   "join_and_you": "Присоединяйся и ты!",
-  "photo_gallery": "фотогаллерею",
+  "photo_gallery": "Фотогалерея",
   "answer_from_pulse_gym_administration": "Ответ от Администрации Pulse Gym",
   "pulse_gym_network_of_sports_clubs_in_Kharkov": " Pulse GYM Сеть спортивных клубов в харькове",
   "specialization": "Специализация:",
@@ -109,5 +109,7 @@
   "location_of_clubs": "расположение клубов",
   "not_working": "временно не работает",
   "opening_soon": "скоро открытие",
-  "individual_program": "индивидуальная программа"
+  "individual_program": "индивидуальная программа",
+  "why_pulse_gym": "Почему именно pulse gym?",
+  "all_clubs_of_the_pulse_gym_network": "Всех клубов сети PULCE GYM"
 }

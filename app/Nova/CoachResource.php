@@ -26,7 +26,7 @@ class CoachResource extends Resource
 
     public static $model = Coach::class;
 
-    public static $title = 'title';
+    public static $title = 'name';
 
     public static $search = [
         'id', 'name', 'image', 'description'

@@ -22,7 +22,7 @@ class SeoResource extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'name';
 
     /**
      * The columns that should be searched.
@@ -33,7 +33,7 @@ class SeoResource extends Resource
         'id',
     ];
 
-    public static $displayInNavigation = false;
+//    public static $displayInNavigation = false;
 
     /**
      * Get the fields displayed by the resource.

@@ -10,8 +10,8 @@ class Seo extends Model
 {
     use HasFactory;
     use HasTranslations;
-    protected $fillable = ['meta_title', 'meta_description', 'key_words','route_name'];
-    public array $translatable = ['meta_title', 'meta_description','key_words'];
+    protected $fillable = ['meta_title', 'meta_description'];
+    public array $translatable = ['meta_title', 'meta_description'];
     public function seoeable()
     {
         return $this->morphTo();

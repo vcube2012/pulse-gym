@@ -72,7 +72,7 @@ class CoachResource extends Resource
             Boolean::make('Personal Coach','is_personal_coach'),
             AttachMany::make('specialization', 'specialization' , SpecializationResource::class),
             BelongsToMany::make('specialization', 'specialization' , SpecializationResource::class),
-            MorphOne::make('MetaData','seo',SeoResource::class),
+//            MorphOne::make('MetaData','seo',SeoResource::class),
         ];
     }
 

@@ -47,7 +47,7 @@ class BlogResource extends Resource
             Image::make('Image', 'image')
                 ->sortable(),
             BelongsToMany::make('Tags', 'tags', TagResource::class),
-            MorphOne::make('MetaData','seo',SeoResource::class),
+//            MorphOne::make('MetaData','seo',SeoResource::class),
         ];
     }
 

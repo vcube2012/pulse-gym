@@ -77,7 +77,7 @@ class ClubResource extends Resource
             AttachMany::make('services', 'services' , ServiceResource::class)->display('name'),
             BelongsToMany::make('services', 'services' , ServiceResource::class),
 
-            MorphOne::make('MetaData','seo',SeoResource::class),
+//            MorphOne::make('MetaData','seo',SeoResource::class),
 //            AttachMany::make('schedule', 'schedule' , ScheduleResource::class),
 //            BelongsToMany::make('schedule', 'schedule' , ScheduleResource::class),
 

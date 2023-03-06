@@ -4,6 +4,7 @@ namespace App\Nova;
 
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\MorphTo;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Spatie\NovaTranslatable\Translatable;
@@ -33,6 +34,10 @@ class SeoResource extends Resource
         'id',
     ];
 
+    public static function label()
+    {
+        return 'SEO';
+    }
 //    public static $displayInNavigation = false;
 
     /**
@@ -49,6 +54,11 @@ class SeoResource extends Resource
                 \Laravel\Nova\Fields\Text::make('Title', 'meta_title'),
                 \Laravel\Nova\Fields\Text::make('Description', 'meta_description'),
             ]),
+            MorphTo::make('MetaData','seoeable')->types([
+                ClubResource::class,
+                BlogResource::class,
+                CoachResource::class,
+            ])
         ];
     }
 

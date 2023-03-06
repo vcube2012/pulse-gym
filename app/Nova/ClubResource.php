@@ -50,6 +50,7 @@ class ClubResource extends Resource
             Boolean::make('Тимчасово не працює','no_working'),
 
             Image::make('image','image'),
+            Image::make('image_bar','image_bar'),
 
             Text::make('Lat')
                 ->sortable()
@@ -75,6 +76,7 @@ class ClubResource extends Resource
 
             AttachMany::make('services', 'services' , ServiceResource::class)->display('name'),
             BelongsToMany::make('services', 'services' , ServiceResource::class),
+
             MorphOne::make('MetaData','seo',SeoResource::class),
 //            AttachMany::make('schedule', 'schedule' , ScheduleResource::class),
 //            BelongsToMany::make('schedule', 'schedule' , ScheduleResource::class),

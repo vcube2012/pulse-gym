@@ -23,6 +23,7 @@ class ClubResource extends JsonResource
             'slug' => $this->slug,
             'name' => $this->name,
             'image' =>$this->imageUrl,
+            'image_bar' =>$this->imageUrlBar,
             'new' => $this->new,
             'not_working'=>$this->no_working,
             'address' => $this->address,

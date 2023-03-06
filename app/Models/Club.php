@@ -75,6 +75,10 @@ class Club extends Model implements HasMedia
     {
         return asset(Storage::url($this->image));
     }
+    public function getImageUrlBarAttribute(): string
+    {
+        return asset(Storage::url($this->image_bar));
+    }
 
     public function feedback()
     {

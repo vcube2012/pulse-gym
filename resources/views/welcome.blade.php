@@ -97,7 +97,7 @@
             }
         }</style>
     <script defer="defer" src="{{asset('/static/js/main.d5df7f6f.js')}}"></script>
-    <link href="{{asset('/static/css/main.1f0ad3b3.css')}}" rel="stylesheet">
+    <link href="{{asset('/static/css/main.02d0866f.css')}}" rel="stylesheet">
 </head>
 <body>
 <noscript>You need to enable JavaScript to run this app.</noscript>

@@ -146,7 +146,9 @@ class Club extends Model implements HasMedia
         try {
             $phone = Arr::pluck($this->phone, 'attributes.phone');
             $phone = Arr::map($phone,function($value, $key){
-                return '+38'.Str::replace('-','',$value);
+                $p='+38'.Str::replace('-','',$value);
+                $p=Str::replace(' ','',$p);
+                return $p;
             });
             $phone = Arr::map($phone,function($value, $key){
                 return substr($value,0,3).' '.substr($value,3,3).' '.substr($value,6,3).' '.substr($value,9,4);

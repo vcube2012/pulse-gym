@@ -37,6 +37,15 @@ class Price extends Model
     use HasTranslations;
 
     protected array $translatable= ['name', 'comment'];
+
+    public function priceCategory()
+    {
+        return $this->belongsTo(PriceCategory::class);
+    }
+    public function parent()
+    {
+        return $this->priceCategory();
+    }
     public function getPriceValueAttribute()
     {
         if($this->month){

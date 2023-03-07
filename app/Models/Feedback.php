@@ -40,6 +40,10 @@ class Feedback extends Model
     protected $with = ['club'];
     protected $fillable = ['name', 'club_id', 'email', 'feedback', 'answer','created_at','active'];
 
+    public function parent()
+    {
+        return $this->club();
+    }
     public function club(): BelongsTo
     {
         return $this->belongsTo(Club::class);

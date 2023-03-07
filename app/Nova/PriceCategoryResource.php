@@ -46,6 +46,7 @@ class PriceCategoryResource extends Resource
             Text::make('Color')
                 ->sortable()
                 ->rules('required'),
+
             HasMany::make('Prices', 'price', PriceResource::class),
 
             AttachMany::make('baners','baners',BanerResource::class),

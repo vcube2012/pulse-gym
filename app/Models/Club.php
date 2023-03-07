@@ -70,7 +70,6 @@ class Club extends Model implements HasMedia
         'phone' => 'json',
     ];
 
-
     public function getImageUrlAttribute(): string
     {
         return asset(Storage::url($this->image));

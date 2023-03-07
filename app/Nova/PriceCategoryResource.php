@@ -47,7 +47,7 @@ class PriceCategoryResource extends Resource
                 ->sortable()
                 ->rules('required'),
 
-            HasMany::make('Prices', 'price', PriceResource::class),
+//            HasMany::make('Prices', 'price', PriceResource::class),
 
             AttachMany::make('baners','baners',BanerResource::class),
            BelongsToMany::make('baners','baners',BanerResource::class)->display('name'),

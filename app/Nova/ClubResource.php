@@ -68,6 +68,8 @@ class ClubResource extends Resource
             Date::make('Дата створення','created_at'),
             HasMany::make('feedback' , 'feedback' , FeedbackResource::class),
 
+            HasMany::make('prices' , 'prices' , PriceResource::class),
+
             AttachMany::make('price_category', 'price' , PriceCategoryResource::class),
             BelongsToMany::make('price_category', 'price' , PriceCategoryResource::class),
 

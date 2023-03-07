@@ -57,8 +57,4 @@ class PriceCategory extends Model
         $this->belongsToMany(Club::class);
     }
 
-    public function scopePriceByClubId($id)
-    {
-        return $this->price()->where('club_id',$id);
-    }
 }

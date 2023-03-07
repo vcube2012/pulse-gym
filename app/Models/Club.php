@@ -83,6 +83,10 @@ class Club extends Model implements HasMedia
     {
         return $this->hasMany(Feedback::class);
     }
+    public function prices()
+    {
+        return $this->hasMany(Price::class);
+    }
 
     public function seo()
     {

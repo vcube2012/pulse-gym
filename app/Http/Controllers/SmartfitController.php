@@ -15,7 +15,7 @@ class SmartfitController extends Controller
 
     public function show(Smartfit $smartfit)
     {
-        $smartfitt=Page::query()->where('slug->'.app()->getLocale(),$smartfit)->first();
+        $smartfitt=Smartfit::query()->where('slug->'.app()->getLocale(),$smartfit)->first();
 
         return SmartfitResource::make($smartfitt->load(['coaches.specialization']));
     }

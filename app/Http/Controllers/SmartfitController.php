@@ -10,7 +10,7 @@ class SmartfitController extends Controller
 {
     public function index()
     {
-        return SmartfitResource::make(Smartfit::all()->first()->load(['coaches.specialization']));
+        return SmartfitResource::make(Smartfit::query()->first()->load(['coaches.specialization']));
     }
 
     public function show(string $smartfit)

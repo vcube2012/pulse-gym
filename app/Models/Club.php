@@ -61,7 +61,7 @@ class Club extends Model implements HasMedia
 {
     use InteractsWithMedia;
     use HasFactory;
-    use HasSlug;
+//    use HasSlug;
     use HasTranslations;
 
     protected array $translatable = ['name', 'address','scheduler'];

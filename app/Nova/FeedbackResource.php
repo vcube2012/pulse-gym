@@ -43,11 +43,11 @@ class FeedbackResource extends Resource
 
             Textarea::make('Feedback')
                 ->sortable()
-                ->rules('required'),
+                ->rules('required')->alwaysShow(),
 
             Textarea::make('Answer')
                 ->sortable()
-                ->rules('nullable'),
+                ->rules('nullable')->alwaysShow(),
 
             Date::make('Created At','created_at')
                 ->sortable(),

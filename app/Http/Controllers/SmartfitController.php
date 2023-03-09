@@ -13,7 +13,7 @@ class SmartfitController extends Controller
         return PreviewSmartfitResource::make(Smartfit::all()->first());
     }
 
-    public function show(Smartfit $smartfit)
+    public function show(string $smartfit)
     {
         $smartfitt=Smartfit::query()->where('slug->'.app()->getLocale(),$smartfit)->first();
 

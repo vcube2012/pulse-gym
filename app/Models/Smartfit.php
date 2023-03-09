@@ -17,7 +17,7 @@ class Smartfit extends Model implements HasMedia
     use InteractsWithMedia;
 //    use HasSlug;
     use HasTranslations;
-    protected array $translatable = ['name', 'address','top_title','text','sub_title','description','features'];
+    protected array $translatable = ['name', 'address','top_title','text','sub_title','description','features','slug'];
 
     protected $casts = [
         'phone' => 'json',

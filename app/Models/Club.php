@@ -64,7 +64,7 @@ class Club extends Model implements HasMedia
 //    use HasSlug;
     use HasTranslations;
 
-    protected array $translatable = ['name', 'address','scheduler'];
+    protected array $translatable = ['name', 'address','scheduler','slug'];
 
     protected $casts = [
         'phone' => 'json',

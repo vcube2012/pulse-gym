@@ -42,7 +42,7 @@ class Blog extends Model
     use HasFactory;
 //    use HasSlug;
     use HasTranslations;
-    protected array $translatable = ['title', 'description'];
+    protected array $translatable = ['title', 'description','slug'];
 
     protected $fillable = ['slug', 'title','image', 'description'];
 

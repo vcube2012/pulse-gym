@@ -13,7 +13,7 @@ class Page extends Model
     use HasFactory;
 //    use HasSlug;
     use HasTranslations;
-    protected array $translatable = ['name', 'text'];
+    protected array $translatable = ['name', 'text','slug'];
     public function getSlugOptions(): SlugOptions
     {
         return SlugOptions::create()

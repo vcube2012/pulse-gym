@@ -20,7 +20,8 @@ class ClubResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'slug' => $this->slug,
+            'slug' => $this->getTranslation('slug', 'uk'),
+            'slug_ru' => $this->getTranslation('slug', 'ru'),
             'name' => $this->name,
             'image' =>$this->imageUrl,
             'image_bar' =>$this->imageUrlBar,

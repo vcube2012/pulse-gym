@@ -15,6 +15,8 @@ class PageResource extends JsonResource
     public function toArray($request)
     {
         return [
+            'slug' => $this->getTranslation('slug', 'uk'),
+            'slug_ru' => $this->getTranslation('slug', 'ru'),
             'name'=>$this->name,
             'text'=>$this->text,
         ];

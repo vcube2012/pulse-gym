@@ -15,10 +15,11 @@ class BlogResource extends JsonResource
      */
     public function toArray($request)
     {
-        
+
         return [
             'id' => $this->id,
-            'slug' => $this->slug,
+            'slug' => $this->getTranslation('slug', 'uk'),
+            'slug_ru' => $this->getTranslation('slug', 'ru'),
             'title' => $this->title,
             'image' => $this->imageUrl,
             'description' => $this->description,

@@ -15,18 +15,20 @@ use Spatie\Translatable\HasTranslations;
 class Smartfit extends Model implements HasMedia
 {
     use InteractsWithMedia;
+
 //    use HasSlug;
     use HasTranslations;
-    protected array $translatable = ['name', 'address','top_title','text','sub_title','description','features','slug'];
+
+    protected array $translatable = ['name','slug' ,'address', 'top_title', 'text', 'sub_title', 'description', 'features'];
 
     protected $casts = [
         'phone' => 'json',
     ];
 
 
-    public function getImageUrlAttribute():string
+    public function getImageUrlAttribute(): string
     {
-        return  asset(Storage::url($this->image));
+        return asset(Storage::url($this->image));
     }
 
     public function coaches()
@@ -47,7 +49,6 @@ class Smartfit extends Model implements HasMedia
         $this->addMediaCollection('main')->singleFile();
         $this->addMediaCollection('my_multi_collection');
     }
-
 
 
     public function getSlugOptions(): SlugOptions

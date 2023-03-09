@@ -31,6 +31,7 @@ Route::middleware("localization")->group(function () {
 
     Route::get('promo', [\App\Http\Controllers\PromoController::class, 'index']);
     Route::get('smartfit/{string:slug}', [\App\Http\Controllers\SmartfitController::class, 'show']);
+    Route::get('smartfit', [\App\Http\Controllers\SmartfitController::class, 'index']);
 
 });
 

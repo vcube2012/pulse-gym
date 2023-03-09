@@ -46,9 +46,10 @@ class ClubController extends Controller
     }
 
 
-    public function show(Club $club)
+    public function show(string $club)
     {
-        return new ClubResource($club->load(['price.baners' , 'coaches' , 'services','seo']));
+        $clubb=Club::query()->where('slug->'.app()->getLocale(),$club)->first();
+        return new ClubResource($clubb->load(['price.baners' , 'coaches' , 'services','seo']));
     }
 
     /**

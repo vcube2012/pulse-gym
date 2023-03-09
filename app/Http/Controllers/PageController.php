@@ -43,7 +43,9 @@ class PageController extends Controller
 
     public function show(Page $page)
     {
-        return PageResource::make($page);
+        $pagee=Page::query()->where('slug->'.app()->getLocale(),$page)->first();
+
+        return PageResource::make($pagee);
     }
 
     /**

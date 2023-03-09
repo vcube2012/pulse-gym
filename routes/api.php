@@ -32,6 +32,15 @@ Route::middleware("localization")->group(function () {
     Route::get('promo', [\App\Http\Controllers\PromoController::class, 'index']);
     Route::get('smartfit/{string:slug}', [\App\Http\Controllers\SmartfitController::class, 'show']);
     Route::get('smartfit', [\App\Http\Controllers\SmartfitController::class, 'index']);
+    Route::get('pravila-slugs',function (){
+        $smart=\App\Models\Page::query()->first();
+        return [
+            'data'=>[
+                'uk'=>$smart->getTranslation('slug', 'uk'),
+                'ru'=>$smart->getTranslation('slug', 'ru'),
+            ]
+        ];
+    });
 
 });
 

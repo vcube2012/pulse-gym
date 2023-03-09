@@ -18,8 +18,11 @@ class BlogResource extends JsonResource
 
         return [
             'id' => $this->id,
-            'slug' => $this->getTranslation('slug', 'uk'),
-            'slug_ru' => $this->getTranslation('slug', 'ru'),
+            'slug' => $this->slug,
+            'slugs' => [
+                'uk'=> $this->getTranslation('slug', 'uk'),
+                'ru'=> $this->getTranslation('slug', 'ru'),
+            ],
             'title' => $this->title,
             'image' => $this->imageUrl,
             'description' => $this->description,

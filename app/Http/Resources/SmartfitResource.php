@@ -16,8 +16,11 @@ class SmartfitResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'slug' => $this->getTranslation('slug', 'uk'),
-            'slug_ru' => $this->getTranslation('slug', 'ru'),
+            'slug' => $this->slug,
+            'slugs' => [
+                'uk'=> $this->getTranslation('slug', 'uk'),
+                'ru'=> $this->getTranslation('slug', 'ru'),
+            ],
             'name' => $this->name,
             'top_title' => $this->top_title,
             'text' => $this->text,

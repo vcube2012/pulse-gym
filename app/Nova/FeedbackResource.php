@@ -11,6 +11,7 @@ use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Textarea;
 
 class FeedbackResource extends Resource
 {
@@ -30,6 +31,8 @@ class FeedbackResource extends Resource
         return [
             ID::make()->sortable(),
 
+            Boolean::make('Is active','active'),
+
             Text::make('Name')
                 ->sortable()
                 ->rules('required'),
@@ -38,17 +41,17 @@ class FeedbackResource extends Resource
                 ->sortable()
                 ->rules('required', 'email', 'max:254'),
 
-            Text::make('Feedback')
+            Textarea::make('Feedback')
                 ->sortable()
                 ->rules('required'),
 
-            Text::make('Answer')
+            Textarea::make('Answer')
                 ->sortable()
                 ->rules('nullable'),
 
             Date::make('Created At','created_at')
                 ->sortable(),
-            Boolean::make('Is active','active'),
+
 
 //            BelongsTo::make('club' , 'club' , ClubResource::class)
         ];

@@ -56,6 +56,10 @@ public static function label()
         return [
             ID::make()->sortable(),
             Translatable::make([
+                Text::make('Slug')
+                    ->sortable(),
+            ]),
+            Translatable::make([
                 Text::make('Name')
                     ->sortable()
                     ->rules('required'),

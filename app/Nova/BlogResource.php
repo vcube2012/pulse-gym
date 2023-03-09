@@ -31,9 +31,10 @@ class BlogResource extends Resource
     {
         return [
             ID::make()->sortable(),
-
-            Text::make('Slug')
-                ->sortable(),
+            Translatable::make([
+                Text::make('Slug')
+                    ->sortable(),
+            ]),
             Translatable::make([
                 Text::make('Title')
                     ->sortable()

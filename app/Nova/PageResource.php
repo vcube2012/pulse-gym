@@ -33,7 +33,10 @@ class PageResource extends Resource
                 Trix::make('Текст','text'),
                 Textarea::make('Редактувати HTML','text'),
             ]),
-            Slug::make('slug')->nullable(),
+            Translatable::make([
+                Text::make('Slug')
+                    ->sortable(),
+            ]),
         ];
     }
 

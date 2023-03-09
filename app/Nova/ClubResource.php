@@ -40,7 +40,10 @@ class ClubResource extends Resource
                     ->rules('required'),
             ]),
 
-            Text::make('slug'),
+            Translatable::make([
+                Text::make('Slug')
+                    ->sortable(),
+            ]),
             Translatable::make([
                 Text::make('Address')
                     ->sortable()

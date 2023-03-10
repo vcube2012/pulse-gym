@@ -35,9 +35,11 @@ Route::middleware("localization")->group(function () {
 
 });
 
-//Route::get('test', function () {
-//    return \App\Models\PriceCategory::find(1)->order();
-//});
+Route::get('test', function () {
+    preg_match("/iPhone|Android|iPad|iPod|webOS/", $_SERVER['HTTP_USER_AGENT'], $matches);
+    $os = current($matches);
+    return $_SERVER;
+});
 //Route::get('parse', function () {
 //    app(\App\Service\ParseFeedback::class)->make();
 //

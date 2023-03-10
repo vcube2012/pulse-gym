@@ -67,7 +67,7 @@ return [
             'driver' => 'pgsql',
             'dump' => [
                 'add_extra_option' => '--format=c', // and any other pg_dump flags
-                'dump_binary_path' => '/home/forge/pulse.saxonia.clinic/bin', // only the path, so without `mysqldump` or `pg_dump`
+//                'dump_binary_path' => '/home/forge/pulse.saxonia.clinic/bin', // only the path, so without `mysqldump` or `pg_dump`
                 'use_single_transaction',
                 'timeout' => 60 * 5, // 5 minute timeout
 //                'exclude_tables' => ['table1', 'table2'],

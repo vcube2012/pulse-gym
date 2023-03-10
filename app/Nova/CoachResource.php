@@ -57,7 +57,7 @@ class CoachResource extends Resource
 
             Text::make('Phone')
                 ->sortable()
-                ->rules('nullable'),
+                ->rules('nullable')->placeholder('0XX-XXX-XXXX'),
 
             Flexible::make('social')->addLayout('Номер телефона', 'social', [
                 Select::make('icon')->options(function (){

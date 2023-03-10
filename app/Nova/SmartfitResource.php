@@ -101,7 +101,7 @@ public static function label()
             Text::make('scheduler')->nullable(),
 
             Flexible::make('phone')->addLayout('Номер телефона', 'phone', [
-                Text::make('phone'),
+                Text::make('phone')->placeholder('0XX-XXX-XXXX'),
             ]),
 
             AttachMany::make('coaches', 'coaches' , CoachResource::class)->display('name'),

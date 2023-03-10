@@ -66,7 +66,7 @@ class ClubResource extends Resource
                 Text::make('scheduler')->nullable(),
             ]),
             Flexible::make('phone')->addLayout('Номер телефона', 'phone', [
-                Text::make('phone'),
+                Text::make('phone')->placeholder('0XX-XXX-XXXX'),
             ]),
             Date::make('Дата створення','created_at'),
             HasMany::make('feedback' , 'feedback' , FeedbackResource::class),

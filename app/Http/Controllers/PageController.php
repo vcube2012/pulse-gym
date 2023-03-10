@@ -44,7 +44,7 @@ class PageController extends Controller
 
     public function show(string $page)
     {
-        $pagee=Page::query()->where('slug','like','%'.$page.'%')->first();
+        $pagee=Page::query()->where('slug->'.app()->getLocale(),$page)->first();
         if(is_null($pagee))
         {
             return response()->json(['message' => 'Not Found!'], 404);

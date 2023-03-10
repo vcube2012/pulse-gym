@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\PageResource;
 use App\Http\Resources\PreviewSmartfitResource;
 use App\Http\Resources\SmartfitResource;
 use App\Models\Smartfit;
@@ -17,6 +18,12 @@ class SmartfitController extends Controller
     {
         $smartfitt=Smartfit::query()->where('slug->'.app()->getLocale(),$smartfit)->first();
 
-        return SmartfitResource::make($smartfitt->load(['coaches.specialization']));
+        if(is_null($smartfitt))
+        {
+            return response()->json(['message' => 'Not Found!'], 404);
+        }
+        else{
+            return SmartfitResource::make($smartfitt->load(['coaches.specialization']));
+        }
     }
 }

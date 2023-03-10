@@ -56,7 +56,13 @@ class BlogController extends Controller
     public function show(string $blog)
     {
         $blogg=Blog::query()->where('slug->'.app()->getLocale(),$blog)->first();
-        return new BlogResource($blogg->load(['tags', 'seo']));
+        if(is_null($blogg))
+        {
+            return response()->json(['message' => 'Not Found!'], 404);
+        }
+        else{
+            return new BlogResource($blogg->load(['tags', 'seo']));
+        }
     }
 
     /**

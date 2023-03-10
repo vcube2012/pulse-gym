@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
@@ -60,8 +61,18 @@ class Smartfit extends Model implements HasMedia
 
     public function getPhone()
     {
+
         try {
-            return Arr::pluck($this->phone, 'attributes.phone');
+            $phone = Arr::pluck($this->phone, 'attributes.phone');
+            $phone = Arr::map($phone,function($value, $key){
+                $p='+38'.Str::replace('-','',$value);
+                $p=Str::replace(' ','',$p);
+                return $p;
+            });
+            $phone = Arr::map($phone,function($value, $key){
+                return substr($value,0,3).' '.substr($value,3,3).' '.substr($value,6,3).' '.substr($value,9,4);
+            });
+            return $phone;
         } catch (\Throwable $exception) {
             return [];
         }

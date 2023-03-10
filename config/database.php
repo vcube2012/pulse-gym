@@ -65,6 +65,14 @@ return [
 
         'pgsql' => [
             'driver' => 'pgsql',
+            'dump' => [
+                'add_extra_option' => '--format=c', // and any other pg_dump flags
+                'dump_binary_path' => '/var/lib/postgresql', // only the path, so without `mysqldump` or `pg_dump`
+                'use_single_transaction',
+                'timeout' => 60 * 5, // 5 minute timeout
+//                'exclude_tables' => ['table1', 'table2'],
+//                'add_extra_option' => '--optionname=optionvalue', // for example '--column_statistics=0'
+            ],
             'url' => env('DATABASE_URL'),
             'host' => env('DB_HOST', '127.0.0.1'),
             'port' => env('DB_PORT', '5432'),

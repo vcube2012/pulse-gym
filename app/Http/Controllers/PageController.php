@@ -6,6 +6,7 @@ use App\Http\Requests\StorePageRequest;
 use App\Http\Requests\UpdatePageRequest;
 use App\Http\Resources\PageResource;
 use App\Models\Page;
+use http\Env\Response;
 
 class PageController extends Controller
 {
@@ -43,9 +44,14 @@ class PageController extends Controller
 
     public function show(string $page)
     {
-        $pagee=Page::query()->where('slug->'.app()->getLocale(),$page)->first();
-
-        return PageResource::make($pagee);
+        $pagee=Page::query()->where('slug','like','%'.$page.'%')->first();
+        if(is_null($pagee))
+        {
+            return response()->json(['message' => 'Not Found!'], 404);
+        }
+        else{
+            return PageResource::make($pagee);
+        }
     }
 
     /**

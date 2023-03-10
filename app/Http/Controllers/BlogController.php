@@ -53,7 +53,7 @@ class BlogController extends Controller
      * @param \App\Models\Blog $blog
      * @return BlogResource
      */
-    public function show(Blog $blog)
+    public function show(string $blog)
     {
         $blogg=Blog::query()->where('slug->'.app()->getLocale(),$blog)->first();
         return new BlogResource($blogg->load(['tags', 'seo']));

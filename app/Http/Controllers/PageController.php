@@ -41,7 +41,7 @@ class PageController extends Controller
     }
 
 
-    public function show(Page $page)
+    public function show(string $page)
     {
         $pagee=Page::query()->where('slug->'.app()->getLocale(),$page)->first();
 

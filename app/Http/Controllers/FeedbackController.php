@@ -17,7 +17,7 @@ class FeedbackController extends Controller
      */
     public function index()
     {
-        return FeedbackResource::collection(Feedback::isActive()->paginate(4));
+        return FeedbackResource::collection(Feedback::isActive()->orderBy('created_at','desc')->paginate(15));
     }
 
     /**

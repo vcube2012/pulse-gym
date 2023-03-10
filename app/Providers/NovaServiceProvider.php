@@ -68,6 +68,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     {
         return [
             new SettingsTool,
+            new \Spatie\BackupTool\BackupTool(),
         ];
     }
 

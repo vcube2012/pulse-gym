@@ -35,11 +35,11 @@ Route::middleware("localization")->group(function () {
 
 });
 
-Route::get('test', function () {
-    preg_match("/iPhone|Android|iPad|iPod|webOS|Windows NT|iMac|Macintosh/", $_SERVER['HTTP_USER_AGENT'], $matches);
-    $os = current($matches);
-    return $_SERVER['HTTP_USER_AGENT'];
-});
+//Route::get('test', function () {
+//    preg_match("/iPhone|Android|iPad|iPod|webOS|Windows NT|Macintosh/", $_SERVER['HTTP_USER_AGENT'], $matches);
+//    $os = current($matches);
+//    return $os;
+//});
 //Route::get('parse', function () {
 //    app(\App\Service\ParseFeedback::class)->make();
 //

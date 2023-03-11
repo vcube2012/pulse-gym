@@ -24,6 +24,7 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
     <link rel="manifest" href="{{asset('/favicon/manifest.json')}}">
+    <link rel="preconnect" href="//code.jivosite.com/">
     <meta name="theme-color" content="#ffffff">
     <title>Pulse Gym</title>
     <style>.preloader-page {
@@ -126,5 +127,16 @@
 <script>
     window.setting = {!! \Illuminate\Support\Facades\File::get(storage_path('app/settings.json')) !!}
 </script>
+<!-- BEGIN JIVOSITE CODE {literal} -->
+<script type='text/javascript'>
+    (function(){ var widget_id = '3b18eVEAfe';var d=document;var w=window;function l(){
+        var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true;
+        s.src = '//code.jivosite.com/script/widget/'+widget_id
+        ; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}
+        if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}
+        else{w.addEventListener('load',l,false);}}})();
+</script>
+<!-- {/literal} END JIVOSITE CODE -->
+
 </body>
 </html>

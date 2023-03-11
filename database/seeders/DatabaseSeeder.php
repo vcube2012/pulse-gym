@@ -60,5 +60,9 @@ class DatabaseSeeder extends Seeder
         $this->call(SmartfitsTableSeeder::class);
         $this->call(CoachSmartfitTableSeeder::class);
         $this->call(PoligonTableSeeder::class);
+        $this->call(BanersTableSeeder::class);
+        $this->call(BanerClubTableSeeder::class);
+        $this->call(BanerPriceCategoryTableSeeder::class);
+        $this->call(SeosTableSeeder::class);
     }
 }

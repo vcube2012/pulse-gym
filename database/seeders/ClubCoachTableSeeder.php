@@ -191,58 +191,63 @@ class ClubCoachTableSeeder extends Seeder
             ),
             34 => 
             array (
-                'coach_id' => 33,
+                'coach_id' => 32,
                 'club_id' => 53,
             ),
             35 => 
             array (
-                'coach_id' => 32,
+                'coach_id' => 25,
                 'club_id' => 53,
             ),
             36 => 
             array (
-                'coach_id' => 25,
-                'club_id' => 53,
-            ),
-            37 => 
-            array (
                 'coach_id' => 37,
                 'club_id' => 56,
             ),
-            38 => 
+            37 => 
             array (
                 'coach_id' => 38,
                 'club_id' => 56,
             ),
-            39 => 
+            38 => 
             array (
                 'coach_id' => 41,
                 'club_id' => 57,
             ),
-            40 => 
+            39 => 
             array (
                 'coach_id' => 40,
                 'club_id' => 57,
             ),
-            41 => 
+            40 => 
             array (
                 'coach_id' => 39,
                 'club_id' => 57,
             ),
-            42 => 
+            41 => 
             array (
                 'coach_id' => 42,
                 'club_id' => 58,
             ),
-            43 => 
+            42 => 
             array (
                 'coach_id' => 43,
                 'club_id' => 58,
             ),
-            44 => 
+            43 => 
             array (
                 'coach_id' => 44,
                 'club_id' => 58,
+            ),
+            44 => 
+            array (
+                'coach_id' => 25,
+                'club_id' => 54,
+            ),
+            45 => 
+            array (
+                'coach_id' => 48,
+                'club_id' => 6,
             ),
         ));
         

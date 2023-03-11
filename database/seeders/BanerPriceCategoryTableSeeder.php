@@ -21,13 +21,18 @@ class BanerPriceCategoryTableSeeder extends Seeder
         \DB::table('baner_price_category')->insert(array (
             0 => 
             array (
-                'baner_id' => 4,
-                'price_category_id' => 2,
+                'baner_id' => 2,
+                'price_category_id' => 4,
             ),
             1 => 
             array (
-                'baner_id' => 5,
-                'price_category_id' => 2,
+                'baner_id' => 1,
+                'price_category_id' => 4,
+            ),
+            2 => 
+            array (
+                'baner_id' => 7,
+                'price_category_id' => 4,
             ),
         ));
         

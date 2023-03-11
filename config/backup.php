@@ -26,10 +26,8 @@ return [
                  *
                  * Directories used by the backup process will automatically be excluded.
                  */
-                'exclude' => [
-                    base_path('vendor'),
-                    base_path('node_modules'),
-                ],
+                'exclude' =>  [base_path('vendor'), base_path('node_modules'), base_path('public'), base_path('etc'), base_path('logs'), base_path('ssl'), base_path('tmp'), ]
+                ,
 
                 /*
                  * Determines if symlinks should be followed.

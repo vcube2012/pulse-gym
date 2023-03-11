@@ -105,7 +105,6 @@
 <script>  window.setting =
         {
             email: 'vcube.su@gmail.com',
-            instagram: 'https:\/\/www.youtube.com\/watch?v=Le9qfqLYs8M',
             facebook: 'https:\/\/www.youtube.com\/watch?v=Le9qfqLYs8M',
             schedule: 'Пн - Сб с 8:00 до 22:00|Вс с 8:00 до 20:00',
         }

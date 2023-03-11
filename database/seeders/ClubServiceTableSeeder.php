@@ -494,6 +494,11 @@ class ClubServiceTableSeeder extends Seeder
                 'club_id' => 58,
                 'service_id' => 2,
             ),
+            95 => 
+            array (
+                'club_id' => 5,
+                'service_id' => 1,
+            ),
         ));
         
         

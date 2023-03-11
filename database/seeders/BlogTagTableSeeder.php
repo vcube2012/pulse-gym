@@ -14,85 +14,85 @@ class BlogTagTableSeeder extends Seeder
      */
     public function run()
     {
-
+        
 
         \DB::table('blog_tag')->delete();
-
+        
         \DB::table('blog_tag')->insert(array (
-            0 =>
+            0 => 
             array (
-                //'id' => 1,
+                'id' => 1,
                 'blog_id' => 1,
                 'tag_id' => 1,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            1 =>
+            1 => 
             array (
-                //'id' => 5,
+                'id' => 5,
                 'blog_id' => 2,
                 'tag_id' => 3,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            2 =>
+            2 => 
             array (
-                //'id' => 6,
+                'id' => 6,
                 'blog_id' => 4,
                 'tag_id' => 1,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            3 =>
+            3 => 
             array (
-                //'id' => 7,
+                'id' => 7,
                 'blog_id' => 5,
                 'tag_id' => 3,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            4 =>
+            4 => 
             array (
-                //'id' => 8,
+                'id' => 8,
                 'blog_id' => 6,
                 'tag_id' => 3,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            5 =>
+            5 => 
             array (
-                //'id' => 9,
+                'id' => 9,
                 'blog_id' => 7,
                 'tag_id' => 3,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            6 =>
+            6 => 
             array (
-                //'id' => 10,
+                'id' => 10,
                 'blog_id' => 8,
                 'tag_id' => 4,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            7 =>
+            7 => 
             array (
-                //'id' => 11,
+                'id' => 11,
                 'blog_id' => 10,
                 'tag_id' => 4,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            8 =>
+            8 => 
             array (
-                //'id' => 12,
+                'id' => 12,
                 'blog_id' => 9,
                 'tag_id' => 4,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
         ));
-
-
+        
+        
     }
 }

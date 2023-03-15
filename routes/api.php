@@ -1,5 +1,6 @@
 <?php
 
+use App\Actions\OrderPriceAction;
 use App\Models\Club;
 use App\Models\Promo;
 use Illuminate\Http\Request;
@@ -36,9 +37,24 @@ Route::middleware("localization")->group(function () {
 });
 
 //Route::get('test', function () {
-//    preg_match("/iPhone|Android|iPad|iPod|webOS|Windows NT|Macintosh/", $_SERVER['HTTP_USER_AGENT'], $matches);
-//    $os = current($matches);
-//    return $os;
+//  return config('mail.mailers.smtp.host');
+//});
+//Route::get('test', function () {
+//    $actionOrder = new OrderPriceAction();
+//    $clubs = Club::all();
+//    foreach ($clubs as $club) {
+//        $i=1;
+//        $categories = $club->price;
+//        foreach ($categories as $category)
+//        {
+//            $prices = $actionOrder($category->price()->where('club_id',$category->pivot->club_id)->orderBy('price')->get());
+//            foreach ($prices as $price)
+//            {
+//                $price->sort=$i++;
+//                $price->save();
+//            }
+//        }
+//    }
 //});
 //Route::get('parse', function () {
 //    app(\App\Service\ParseFeedback::class)->make();

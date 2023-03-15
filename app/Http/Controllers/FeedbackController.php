@@ -7,6 +7,7 @@ use App\Http\Requests\StoreFeedbackRequest;
 use App\Http\Requests\UpdateFeedbackRequest;
 use App\Http\Resources\FeedbackResource;
 use App\Models\Feedback;
+use App\Models\Mailer;
 
 class FeedbackController extends Controller
 {
@@ -38,8 +39,17 @@ class FeedbackController extends Controller
      */
     public function store(FeedbackRequest $request)
     {
-        $feedback = Feedback::create($request->all());
-        return ['status' =>'ok' , 'data' => new FeedbackResource($feedback)];
+        if(Mailer::all()->count()>0) {
+            $feedback = Feedback::create($request->all());
+            return ['status' => 'ok', 'data' => new FeedbackResource($feedback)];
+        }
+        else{
+            Feedback::withoutEvents(function()use($request){
+                $feedback = Feedback::create($request->all());
+                return ['status' => 'ok', 'data' => new FeedbackResource($feedback)];
+            });
+
+        }
     }
 
     /**

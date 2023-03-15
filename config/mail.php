@@ -43,6 +43,8 @@ return [
             'password' => env('MAIL_PASSWORD'),
             'timeout' => null,
             'local_domain' => env('MAIL_EHLO_DOMAIN'),
+            'auth_mode'  => null,
+            'verify_peer' => false,
         ],
 
         'ses' => [
@@ -92,10 +94,9 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
-        'name' => env('MAIL_FROM_NAME', 'Example'),
+        'address' => env('MAIL_FROM_ADDRESS', 'pulse@gym.com'),
+        'name' => env('MAIL_FROM_NAME', 'Pulse Gym'),
     ],
-
     /*
     |--------------------------------------------------------------------------
     | Markdown Mail Settings

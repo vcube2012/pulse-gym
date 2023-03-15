@@ -6,6 +6,14 @@ use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Resource as NovaResource;
 abstract class Resource extends NovaResource
 {
+    public static $perPageOptions = [50, 100, 150];
+
+    /**
+     * The number of resources to show per page via relationships.
+     *
+     * @var int
+     */
+    public static $perPageViaRelationship = 100;
     /**
      * Build an "index" query for the given resource.
      *

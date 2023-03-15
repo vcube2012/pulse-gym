@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Resources\MissingValue;
 use Illuminate\Support\Str;
+use Spatie\EloquentSortable\Sortable;
+use Spatie\EloquentSortable\SortableTrait;
 use Spatie\Translatable\HasTranslations;
 
 /**
@@ -35,11 +37,16 @@ use Spatie\Translatable\HasTranslations;
  * @method static \Illuminate\Database\Eloquent\Builder|PriceCategory whereUpdatedAt($value)
  * @mixin \Eloquent
  */
-class PriceCategory extends Model
+class PriceCategory extends Model implements Sortable
 {
+
     use HasFactory;
     use HasTranslations;
-
+    use SortableTrait;
+    public $sortable = [
+        'order_column_name' => 'order',
+        'sort_when_creating' => true,
+    ];
     protected array $translatable = ['name', 'comment'];
 
     public function price(): \Illuminate\Database\Eloquent\Relations\HasMany

@@ -11,9 +11,12 @@ use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
+use Outl1ne\NovaSortable\Traits\HasSortableRows;
 
 class ScheduleServiceResource extends Resource
 {
+    use HasSortableRows;
+
     public static $model = ScheduleService::class;
 
     public static $title = 'id';

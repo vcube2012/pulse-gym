@@ -12,10 +12,13 @@ use Laravel\Nova\Fields\MorphOne;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
 use NovaAttachMany\AttachMany;
+use Outl1ne\NovaSortable\Traits\HasSortableRows;
 use Spatie\NovaTranslatable\Translatable;
 
 class PriceCategoryResource extends Resource
 {
+    use HasSortableRows;
+
     public static $model = PriceCategory::class;
 
     public static $title = 'name';

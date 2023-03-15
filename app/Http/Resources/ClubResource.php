@@ -6,6 +6,7 @@ use App\Models\Poligon;
 use Ebess\AdvancedNovaMediaLibrary\Http\Resources\MediaResource;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Storage;
 use function Illuminate\Support\Facades\Storage;
 
@@ -22,30 +23,38 @@ class ClubResource extends JsonResource
             'id' => $this->id,
             'slug' => $this->slug,
             'slugs' => [
-                'uk'=> $this->getTranslation('slug', 'uk'),
-                'ru'=> $this->getTranslation('slug', 'ru'),
+                'uk' => $this->getTranslation('slug', 'uk'),
+                'ru' => $this->getTranslation('slug', 'ru'),
             ],
             'name' => $this->name,
-            'image' =>$this->imageUrl,
-            'image_bar' =>$this->imageUrlBar,
+            'image' => $this->imageUrl,
+            'image_bar' => $this->imageUrlBar,
             'new' => $this->new,
-            'not_working'=>$this->no_working,
+            'not_working' => $this->no_working,
             'address' => $this->address,
-            'created_at'=>$this->created_at,
+            'created_at' => $this->created_at,
             'lat' => $this->lat,
             'lng' => $this->lng,
             'phone' => $this->getPhone(),
             'media' => Media::collection($this->loadMedia('my_multi_collection')),
             'scheduler' => $this->scheduler,
-            'schedule' => ScheduleResource::collection($this?->week())->collection->sortBy(function ($item){return $item['from'];})->groupBy(['name', function ($item) {
+            'schedule' => ScheduleResource::collection($this?->week())->collection->sortBy(function($item){
+                return $item['sort'];
+            })->groupBy(['name', function ($item) {
                 return $item['day'];
             }]),
+//            ->sortBy(function ($v) {
+//        dump($v->flatten()->sortBy('sort')->first()['sort'], $v->sortBy('sort')->first()->first()['name']);
+//        return $v->flatten()->sortBy('sort')->first();
+//    })
 //            'schedule' => ScheduleResource::collection($this->week()),
-            'schedule_recruiting' =>ScheduleResource::collection($this?->weekRecruiting())->collection->sortBy(function ($item){return $item['from'];})->groupBy(['name', function ($item) {
+            'schedule_recruiting' => ScheduleResource::collection($this?->weekRecruiting())->collection->sortBy(function ($item) {
+                return $item['from'];
+            })->groupBy(['name', function ($item) {
                 return $item['day'];
             }]),
             'services' => ServicesResource::collection($this->whenLoaded('services')),
-            'price' => PriceCategoryResource::collection($this->whenLoaded('price', function(){
+            'price' => PriceCategoryResource::collection($this->whenLoaded('price', function () {
                 return $this->order()->get()->load('baners');
             })),
             'coaches' => CoachResource::collection($this->whenLoaded('coaches')),

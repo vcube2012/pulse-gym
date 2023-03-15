@@ -27,7 +27,7 @@ class PriceCategoryResource extends JsonResource
             'new' => $this->new,
             'actia' => $this->actia,
             'comment' => $this->comment,
-            'price' => PriceResource::collection($actionOrder($this->price()->where('club_id',$id)->orderBy('price', 'asc')->get())),
+            'price' => PriceResource::collection($this->price()->where('club_id',$id)->orderBy('sort')->get()),
             'baner' => BanerResource::collection($this->whenLoaded('baners', function () use ($id, $action) {
                 return $this->baners->filter(function ($value, $key) use ($id, $action) {
                     return in_array($id, $action($value->clubs()->select('id')->get()));

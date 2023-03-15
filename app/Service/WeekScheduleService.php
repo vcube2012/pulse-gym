@@ -11,48 +11,61 @@ class WeekScheduleService
 
     public function __construct()
     {
-        $this->day=[
+        $this->day = [
             'name' => '',
             'from' => '',
             'day' => 0,
             'recruiting' => false,
+            'sort' => 99,
         ];
         $this->week = [
             [
-                'name' => 'TRX',
+                'name' => '',
                 'from' => '',
                 'day' => 0,
                 'recruiting' => false,
+                'sort' => 99,
+
             ],
             [
-                'name' => 'TRX',
+                'name' => '',
                 'from' => '',
                 'day' => 1,
                 'recruiting' => false,
+                'sort' => 99,
+
             ],
             [
-                'name' => 'TRX',
+                'name' => '',
                 'from' => '',
                 'day' => 2,
                 'recruiting' => false,
+                'sort' => 99,
+
             ],
             [
-                'name' => 'TRX',
+                'name' => '',
                 'from' => '',
                 'day' => 3,
                 'recruiting' => false,
+                'sort' => 99,
+
             ],
             [
-                'name' => 'TRX',
+                'name' => '',
                 'from' => '',
                 'day' => 4,
                 'recruiting' => false,
+                'sort' => 99,
+
             ],
             [
-                'name' => 'TRX',
+                'name' => '',
                 'from' => '',
                 'day' => 5,
                 'recruiting' => false,
+                'sort' => 99,
+
             ],
 
         ];
@@ -83,20 +96,23 @@ class WeekScheduleService
                     $week[$schedule->day]['from'] = $schedule->from;
                     $week[$schedule->day]['name'] = $schedule->service->name;
                     $week[$schedule->day]['recruiting'] = $schedule->recruiting;
+                    $week[$schedule->day]['sort'] = $schedule->sort;
+
                 }
             }
             $schedules_new = array_merge($schedules_new, $week);
         }
 
         foreach ($schedules as $schedule) {
-            $day=$this->day;
-            $day['name']=$schedule->service->name;
-            $day['day']=$schedule->day;
-            $day['from']=$schedule->from;
-            $day['recruiting']=$schedule->recruiting;
-            if(!in_array($day,$schedules_new ))
-            {
-                $schedules_new[]=$day;
+            $day = $this->day;
+            $day['name'] = $schedule->service->name;
+            $day['day'] = $schedule->day;
+            $day['from'] = $schedule->from;
+            $day['recruiting'] = $schedule->recruiting;
+            $day['sort'] = $schedule->sort;
+
+            if (!in_array($day, $schedules_new)) {
+                $schedules_new[] = $day;
             }
         }
         return collect($schedules_new);

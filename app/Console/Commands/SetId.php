@@ -28,7 +28,7 @@ class SetId extends Command
     public function handle()
     {
         $tables = \DB::select('SELECT table_name FROM information_schema.tables WHERE table_schema = \'public\' ORDER BY table_name;');
-        $ignores = array('admin_setting', 'model_has_permissions', 'model_has_roles', 'password_resets', 'role_has_permissions', 'sessions' ,'club_coach' , 'club_price_category' , 'club_service' , 'coach_smartfit' , 'coach_specialization' , 'nova_notifications');
+        $ignores = array('admin_setting', 'model_has_permissions', 'model_has_roles', 'password_resets', 'role_has_permissions', 'sessions' ,'club_coach' , 'club_price_category' , 'club_service' ,'baner_club','baner_price_category', 'coach_smartfit' , 'coach_specialization' , 'nova_notifications');
         foreach ($tables as $table) {
             if (!in_array($table->table_name, $ignores)) {
                 $seq = \DB::table($table->table_name)->max('id') + 1;

@@ -9,10 +9,12 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
+use Outl1ne\NovaSortable\Traits\HasSortableRows;
 use Spatie\NovaTranslatable\Translatable;
 
 class PriceResource extends Resource
 {
+    use HasSortableRows;
     public static $model = Price::class;
 
     public static $title = 'name';
@@ -26,7 +28,11 @@ class PriceResource extends Resource
     {
         return [
             ID::make()->sortable(),
-            BelongsTo::make('PriceCategory','priceCategory',PriceCategoryResource::class,),
+            Number::make('sort'),
+            BelongsTo::make('PriceCategory','priceCategory',PriceCategoryResource::class),
+            Text::make('Price')
+                ->sortable()
+                ->rules('required'),
             Translatable::make([
                 Text::make('Name')
                     ->sortable()
@@ -36,9 +42,6 @@ class PriceResource extends Resource
                     ->sortable()
                     ->rules('nullable'),
             ]),
-            Text::make('Price')
-                ->sortable()
-                ->rules('required'),
         ];
     }
 

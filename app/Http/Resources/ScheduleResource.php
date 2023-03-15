@@ -18,6 +18,7 @@ class ScheduleResource extends JsonResource
             'from' => $this['from'],
             'day' => $this['day'],
             'recruiting' => $this['recruiting'],
+            'sort'=> $this['sort'],
         ];
     }
 }

@@ -25,6 +25,8 @@
         "spatie/nova-backup-tool": "^5.0",
         "spatie/nova-translatable": "^3.1",
         "spiral/roadrunner": "^2.8.2",
+        "symfony/http-client": "^6.2",
+        "symfony/mailgun-mailer": "^6.2",
         "whitecube/nova-flexible-content": "^1.0"
     },
     "require-dev": {

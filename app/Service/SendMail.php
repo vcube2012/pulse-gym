@@ -3,47 +3,36 @@
 namespace App\Service;
 
 use App\Models\Mailer;
+use Illuminate\Support\Facades\Cache;
 
 class SendMail
 {
-    public static function domain()
+    public null|\Illuminate\Database\Eloquent\Model $config;
+
+    public function __construct()
     {
-        return Mailer::select('domain')->first()->domain;
+        $this->getConfig();
     }
-    public static function driver()
+
+    public function getConfig()
     {
-        return Mailer::select('driver')->first()->driver;
+        $this->config = Cache::remember('config_mailer', 60, function () {
+            return Mailer::query()->first();
+        });
+        return $this;
     }
-    public static function host()
+
+    public function setConfig()
     {
-        return Mailer::select('host')->first()->host;
-    }
-    public static function port()
-    {
-        return Mailer::select('port')->first()->port;
-    }
-    public static function userName()
-    {
-        return Mailer::select('username')->first()->username;
-    }
-    public static function password()
-    {
-        return Mailer::select('password')->first()->password;
-    }
-    public static function secret()
-    {
-        return Mailer::select('secret')->first()->secret;
-    }
-    public static function to()
-    {
-        return Mailer::select('to')->first()->to;
-    }
-    public static function from_name()
-    {
-        return Mailer::select('from_name')->first()->from_name;
-    }
-    public static function from_address()
-    {
-        return Mailer::select('from_address')->first()->from_address;
+        config()->set('mail.mailers.smtp.host', $this->config->host);
+        config()->set('mail.mailers.smtp.port', $this->config->port);
+        config()->set('mail.mailers.smtp.username', $this->config->username);
+        config()->set('mail.mailers.smtp.password', $this->config->password);
+        config()->set('services.mailgun.domain', $this->config->domain);
+        config()->set('services.mailgun.secret', $this->config->secret);
+        config()->set('mail.from.address', $this->config->address);
+        config()->set('mail.from.name', $this->config->name);
+        config()->set('mail.from.name', $this->config->to);
+        return $this;
     }
 }

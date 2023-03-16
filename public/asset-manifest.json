@@ -1,12 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.3b39e460.css",
-    "main.js": "/static/js/main.ae2cb9a8.js",
-    "static/media/girl.png": "/static/media/girl.d9cd28f56a62360068cd.png",
-    "static/media/smart-fit-bg-mobile.png": "/static/media/smart-fit-bg-mobile.49883f501f5c1f0b43a7.png",
-    "static/media/smart-fit-bg.jpg": "/static/media/smart-fit-bg.0a8eac14bb28881ea553.jpg",
+    "main.css": "/static/css/main.084241f4.css",
+    "main.js": "/static/js/main.244f0543.js",
+    "static/media/welcome_gym.jpg": "/static/media/welcome_gym.806cb2b6701c7734b039.jpg",
+    "static/media/girl.png": "/static/media/girl.4c9efdc88a18cf5c089c.png",
+    "static/media/smart-fit-bg.jpg": "/static/media/smart-fit-bg.9221d132b0e590a78ab6.jpg",
     "static/media/Inter-ThinItalicBETA.eot": "/static/media/Inter-ThinItalicBETA.d48d71c60397c964c3c3.eot",
     "static/media/Inter-ThinItalicBETA.ttf": "/static/media/Inter-ThinItalicBETA.ab1bddda75ef8313afa1.ttf",
+    "static/media/promo_bg.jpg": "/static/media/promo_bg.8b6721acf0045f31a4d6.jpg",
     "static/media/Inter-ExtraLightItalicBETA.eot": "/static/media/Inter-ExtraLightItalicBETA.56744818a1455954e3d9.eot",
     "static/media/Inter-ExtraLightItalicBETA.ttf": "/static/media/Inter-ExtraLightItalicBETA.339bbf18c7af31249727.ttf",
     "static/media/Inter-MediumItalic.eot": "/static/media/Inter-MediumItalic.e2cbd6fd12d961777b19.eot",
@@ -41,9 +42,13 @@
     "static/media/Inter-Black.ttf": "/static/media/Inter-Black.8032beb7856bb7dbe0bc.ttf",
     "static/media/Inter-Regular.eot": "/static/media/Inter-Regular.f5b04bf996cdaa04b4ea.eot",
     "static/media/Inter-Regular.ttf": "/static/media/Inter-Regular.991468dd4e43f260e6a4.ttf",
+    "static/media/sport-bar.jpg": "/static/media/sport-bar.ba1de747a40aa60e2d4c.jpg",
     "static/media/man.png": "/static/media/man.a52f73fc2d8758066d22.png",
-    "static/media/smart-fit-girl.png": "/static/media/smart-fit-girl.1e11e33d5c605bd9835b.png",
+    "static/media/smart-fit-girl.png": "/static/media/smart-fit-girl.130851b837dc2c4e3854.png",
+    "static/media/smart-fit-bg-mobile.png": "/static/media/smart-fit-bg-mobile.36aeb213c03dcc09e4b8.png",
+    "static/media/banner.jpg": "/static/media/banner.32c8224b8967db410918.jpg",
     "static/media/Inter-ThinItalicBETA.woff": "/static/media/Inter-ThinItalicBETA.2e9280712a9b6cb10f84.woff",
+    "static/media/welcome_gym_m.jpg": "/static/media/welcome_gym_m.596a3871ae2d979db638.jpg",
     "static/media/Inter-ExtraLightItalicBETA.woff": "/static/media/Inter-ExtraLightItalicBETA.e55ddd207377e664006f.woff",
     "static/media/Inter-LightItalicBETA.woff": "/static/media/Inter-LightItalicBETA.8b20feb8a61e99663076.woff",
     "static/media/Inter-ExtraBoldItalic.woff": "/static/media/Inter-ExtraBoldItalic.178e0ad14598df7df715.woff",
@@ -79,17 +84,19 @@
     "static/media/Inter-Medium.woff2": "/static/media/Inter-Medium.01f03178adde434fc9fa.woff2",
     "static/media/Inter-Black.woff2": "/static/media/Inter-Black.ed17840f58cc8c61635a.woff2",
     "static/media/Inter-Regular.woff2": "/static/media/Inter-Regular.bd097ceff83f90802a12.woff2",
-    "static/media/visitors-2.png": "/static/media/visitors-2.1f5fb7f179c69b115693.png",
-    "static/media/visitors-3.png": "/static/media/visitors-3.7012621de17be2e97742.png",
-    "static/media/visitors-1.png": "/static/media/visitors-1.c8b9f071a29bb878bf92.png",
-    "static/media/card.png": "/static/media/card.01c1dcb1881579f00951.png",
-    "static/media/marker.svg": "/static/media/marker.6ecca42fb9a8a5aadac78e9f0f85f7ea.svg",
+    "static/media/banner_mob.jpg": "/static/media/banner_mob.685395985d2f4a33739e.jpg",
+    "static/media/pug.jpg": "/static/media/pug.639eff4c6a938846dccf.jpg",
     "index.html": "/index.html",
-    "main.3b39e460.css.map": "/static/css/main.3b39e460.css.map",
-    "main.3224b099.js.map": "/static/js/main.3224b099.js.map"
+    "static/media/marker_active.svg": "/static/media/marker_active.2014647c6447481239f8ad7f7a5d664c.svg",
+    "static/media/marker.svg": "/static/media/marker.a2204332ba0f97312f68d3087a37b7e4.svg",
+    "static/media/getFetch.cjs": "/static/media/getFetch.40f37ddea2378391108f.cjs",
+    "static/media/ru.svg": "/static/media/ru.c9f71105dac83f60ba72.svg",
+    "static/media/ua.svg": "/static/media/ua.35383f138a776c2fbf63.svg",
+    "main.084241f4.css.map": "/static/css/main.084241f4.css.map",
+    "main.244f0543.js.map": "/static/js/main.244f0543.js.map"
   },
   "entrypoints": [
-    "static/css/main.3b39e460.css",
-    "static/js/main.3224b099.js"
+    "static/css/main.084241f4.css",
+    "static/js/main.244f0543.js"
   ]
 }

@@ -73,6 +73,11 @@ return [
             'panel' => 'Social',
             'language' => 'ru',
         ],
+        [
+            'key' => 'api_key',
+            'label' => 'Google Maps',
+            'panel' => 'Social',
+        ],
     ],
 
 ];

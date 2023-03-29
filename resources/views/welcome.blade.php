@@ -97,18 +97,11 @@
                 opacity: .2
             }
         }</style>
-    <script defer="defer" src="{{asset('/static/js/main.1b0a34d8.js')}}"></script>
+    <script defer="defer" src="{{asset('/static/js/main.b6f62441.js')}}"></script>
     <link href="{{asset('/static/css/main.084241f4.css')}}" rel="stylesheet">
 </head>
 <body>
 <noscript>You need to enable JavaScript to run this app.</noscript>
-<script>  window.setting =
-        {
-            email: 'vcube.su@gmail.com',
-            facebook: 'https:\/\/www.youtube.com\/watch?v=Le9qfqLYs8M',
-            schedule: 'Пн - Сб с 8:00 до 22:00|Вс с 8:00 до 20:00',
-        }
-    window.lang_default = 'ua';</script>
 <div class="preloader-page">
     <svg viewBox="0 0 144 63" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
@@ -122,10 +115,11 @@
             fill="#FFA621"/>
     </svg>
 </div>
-<div id="root"></div>
+
 <script>
     window.setting = {!! \Illuminate\Support\Facades\File::get(storage_path('app/settings.json')) !!}
 </script>
+<div id="root"></div>
 <!-- BEGIN JIVOSITE CODE {literal} -->
 <script type='text/javascript'>
     (function(){ var widget_id = '3b18eVEAfe';var d=document;var w=window;function l(){
